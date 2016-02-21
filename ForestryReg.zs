@@ -1,14 +1,9 @@
-import mods.forestry.Carpenter;
+import mods.forestry.Centrifuge;
+import mods.forestry.Squeezer;
 
-val treatedWood = <ImmersiveEngineering:woodenDecoration:0>;
-val planks = <ore:plankWood>;
-val creosote = <liquid:creosote>;
+val beeswax = <Forestry:beeswax>;
+val rfctwax = <Forestry:refractoryWax>;
+val honeydrop = <Forestry:honeyDrop>;
 
-Carpenter.addRecipe(treatedWood * 4, [
-	[planks, planks],
-	[planks, planks]], creosote * 500, 40);
-
-Carpenter.addRecipe(treatedWood * 8, [
-	[planks, planks, planks],
-	[planks, null, planks],
-	[planks, planks, planks]], creosote * 1000, 40);
+Centrifuge.addRecipe([<Mekanism:OtherDust:4> % 5], <minecraft:clay_ball:0>, 200);
+Centrifuge.addRecipe([<Mekanism:OtherDust:4> % 10, <EnderIO:itemMaterial:0> % 80, <minecraft:clay_ball:0> * 2], <minecraft:clay:0>, 800);

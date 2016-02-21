@@ -12,6 +12,7 @@ recipes.remove(<Forestry:resourceStorage:3>);
 recipes.remove(<Forestry:gearBronze>);
 recipes.remove(<Forestry:gearCopper>);
 recipes.remove(<Forestry:gearTin>);
+recipes.removeShaped(<minecraft:packed_ice>, [[<minecraft:ice>, <minecraft:ice>],[<minecraft:ice>, <minecraft:ice>]]);
 
 //Shapeless
 recipes.addShapeless(<GrimoireOfGaia:item.GrimoireOfGaia.FoodPieMeat>, [<ore:listAllmeatcooked>, <ore:listAllmeatcooked>, <ore:listAllmeatcooked>, <ore:listAllegg>, <ore:listAllsugar>]);
@@ -28,6 +29,7 @@ recipes.addShapeless(<harvestcraft:freshmilkItem> * 4, [<MineFactoryReloaded:mil
 recipes.addShapeless(<harvestcraft:freshwaterItem> * 4, [<minecraft:potion>.giveBack(<minecraft:glass_bottle>)]);
 recipes.addShapeless(<harvestcraft:freshwaterItem> * 4, [<ore:fz.waterBucketLike>]);
 recipes.addShapeless(<MineFactoryReloaded:conveyor:16> * 2, [<ExtraUtilities:conveyor>]);
+recipes.addShapeless(<etfuturum:rabbit_stew>, [<ore:foodRabbitcooked>, <ore:cropCarrot>, <minecraft:baked_potato>, <ore:listAllmushroom>, <minecraft:bowl>]);
 
 //Shaped
 recipes.addShaped(<chisel:cloudinabottle>, [[<ore:blockGlass>, <ore:blockGlass>, <ore:blockGlass>], [null, <Railcraft:fluid.steam.bottle>, null]]);
@@ -52,3 +54,7 @@ recipes.addShaped(<ThermalDynamics:retriever> * 2, [[<ore:itemVibrantNugget>, <o
 recipes.addShaped(<ExtraUtilities:creativebuilderswand>, [[null, <ExtraUtilities:decorativeBlock1:12>, <ore:blockUnstable>], [null, <ExtraUtilities:builderswand>, <ExtraUtilities:decorativeBlock1:12>], [<ExtraUtilities:block_bedrockium>, null, null]]);
 recipes.addShaped(<ImmersiveEngineering:storage:7>, [[<ore:ingotSteel>, <ore:ingotSteel>, <ore:ingotSteel>], [<ore:ingotSteel>, <ore:ingotSteel>, <ore:ingotSteel>], [<ore:ingotSteel>, <ore:ingotSteel>, <ore:ingotSteel>]]);
 recipes.addShaped(<ExtraUtilities:conveyor> * 2, [[<MineFactoryReloaded:conveyor:*>, <MineFactoryReloaded:conveyor:*>], [<MineFactoryReloaded:conveyor:*>, <MineFactoryReloaded:conveyor:*>]]);
+recipes.addShaped(<catwalks:catwalk_unlit_nobottom> * 3, [[<catwalks:steelgrate>, null, <catwalks:steelgrate>], [null, <catwalks:steelgrate>, null]]);
+recipes.addShaped(<catwalks:steelgrate> * 32, [[<ore:ingotSteel>, null, <ore:ingotSteel>], [null, <ore:ingotSteel>, null], [<ore:ingotSteel>, null, <ore:ingotSteel>]]);
+//recipes.addShaped(<BuildCraft|Silicon:laserBlock>, [[null, <RedstoneArsenal:material:96>, null], [<minecraft:obsidian>, <ThermalExpansion:material:1>, <minecraft:obsidian>]]);
+//recipes.addShaped(<BuildCraft|Silicon:laserTableBlock>, [[<minecraft:obsidian>, <RedstoneArsenal:material:96>, <minecraft:obsidian>], [<minecraft:obsidian>, <ThermalExpansion:material:1>, <minecraft:obsidian>]]);
