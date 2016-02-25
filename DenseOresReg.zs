@@ -116,7 +116,10 @@ for i, dore in dore0 {
 	Pulverizer.removeRecipe(dore);
 	Crusher.removeRecipe(dore);
 	
-	QED.addShapedRecipe(ore0[i] * 4, [[dore]]);
+	QED.addShapedRecipe(ore0[i] * 4, [[dore, <minecraft:gunpowder>]]);
+	QED.addShapedRecipe(ore0[i] * 4, [[<minecraft:gunpowder>, dore]]);
+	QED.addShapedRecipe(ore0[i] * 4, [[dore], [<minecraft:gunpowder>]]);
+	QED.addShapedRecipe(ore0[i] * 4, [[<minecraft:gunpowder>], [dore]]);
 }
 
 for i, dore in dore1 {
