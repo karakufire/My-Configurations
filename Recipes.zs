@@ -30,6 +30,7 @@ recipes.addShapeless(<harvestcraft:freshwaterItem> * 4, [<minecraft:potion>.give
 recipes.addShapeless(<harvestcraft:freshwaterItem> * 4, [<ore:fz.waterBucketLike>]);
 recipes.addShapeless(<MineFactoryReloaded:conveyor:16> * 2, [<ExtraUtilities:conveyor>]);
 recipes.addShapeless(<etfuturum:rabbit_stew>, [<ore:foodRabbitcooked>, <ore:cropCarrot>, <minecraft:baked_potato>, <ore:listAllmushroom>, <minecraft:bowl>]);
+recipes.addShapeless(<minecraft:stone_slab:0> * 2, [<minecraft:double_stone_slab:0>]);
 
 //Shaped
 recipes.addShaped(<chisel:cloudinabottle>, [[<ore:blockGlass>, <ore:blockGlass>, <ore:blockGlass>], [null, <Railcraft:fluid.steam.bottle>, null]]);
@@ -56,5 +57,6 @@ recipes.addShaped(<ImmersiveEngineering:storage:7>, [[<ore:ingotSteel>, <ore:ing
 recipes.addShaped(<ExtraUtilities:conveyor> * 2, [[<MineFactoryReloaded:conveyor:*>, <MineFactoryReloaded:conveyor:*>], [<MineFactoryReloaded:conveyor:*>, <MineFactoryReloaded:conveyor:*>]]);
 recipes.addShaped(<catwalks:catwalk_unlit_nobottom> * 3, [[<catwalks:steelgrate>, null, <catwalks:steelgrate>], [null, <catwalks:steelgrate>, null]]);
 recipes.addShaped(<catwalks:steelgrate> * 32, [[<ore:ingotSteel>, null, <ore:ingotSteel>], [null, <ore:ingotSteel>, null], [<ore:ingotSteel>, null, <ore:ingotSteel>]]);
+recipes.addShaped(<Mekanism:SaltBlock>, [[<ore:dustSalt>, <ore:dustSalt>], [<ore:dustSalt>, <ore:dustSalt>]]);
 //recipes.addShaped(<BuildCraft|Silicon:laserBlock>, [[null, <RedstoneArsenal:material:96>, null], [<minecraft:obsidian>, <ThermalExpansion:material:1>, <minecraft:obsidian>]]);
 //recipes.addShaped(<BuildCraft|Silicon:laserTableBlock>, [[<minecraft:obsidian>, <RedstoneArsenal:material:96>, <minecraft:obsidian>], [<minecraft:obsidian>, <ThermalExpansion:material:1>, <minecraft:obsidian>]]);
