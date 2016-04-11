@@ -14,9 +14,9 @@ val blackpepper = <harvestcraft:blackpepperItem>;
 val powderCurry = <harvestcraft:currypowderItem>;
 
 Pulverizer.addRecipe(500, cacao, powderCocoa);
-Pulverizer.addRecipe(500, cinnamon, powderCinnamon);
-Pulverizer.addRecipe(500, peppercorn, blackpepper);
-Pulverizer.addRecipe(500, curryleaf, powderCurry);
+//Pulverizer.addRecipe(500, cinnamon, powderCinnamon);
+//Pulverizer.addRecipe(500, peppercorn, blackpepper);
+//Pulverizer.addRecipe(500, curryleaf, powderCurry);
 
 Crusher.addRecipe(cacao, powderCocoa);
 Crusher.addRecipe(cinnamon, powderCinnamon);

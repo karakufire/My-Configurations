@@ -12,6 +12,7 @@ recipes.remove(<Forestry:resourceStorage:3>);
 recipes.remove(<Forestry:gearBronze>);
 recipes.remove(<Forestry:gearCopper>);
 recipes.remove(<Forestry:gearTin>);
+recipes.remove(<enderioaddons:itemMachineParts:22>);
 recipes.removeShaped(<minecraft:packed_ice>, [[<minecraft:ice>, <minecraft:ice>],[<minecraft:ice>, <minecraft:ice>]]);
 
 //Shapeless

@@ -10,6 +10,22 @@ val netherwartDried = <GrimoireOfGaia:item.GrimoireOfGaia.FoodDriedNetherWart>;
 val meatIngot = <MineFactoryReloaded:meat.ingot.raw:0>;
 val meatNugget = <MineFactoryReloaded:meat.nugget.raw:0>;
 
+//Helm, Chest, Leg, Boots
+val osmiumeq = [<MekanismTools:OsmiumHelmet>, <MekanismTools:OsmiumChestplate>, <MekanismTools:OsmiumLeggings>, <MekanismTools:OsmiumBoots>] as IItemStack[];
+val bronzeeq = [<MekanismTools:BronzeHelmet>, <MekanismTools:BronzeChestplate>, <MekanismTools:BronzeLeggings>, <MekanismTools:BronzeBoots>] as IItemStack[];
+val glowstoneeq = [<MekanismTools:GlowstoneHelmet>, <MekanismTools:GlowstoneChestplate>, <MekanismTools:GlowstoneLeggings>, <MekanismTools:GlowstoneBoots>] as IItemStack[];
+val steeleq = [<MekanismTools:SteelHelmet>, <MekanismTools:SteelChestplate>, <MekanismTools:SteelLeggings>, <MekanismTools:SteelBoots>] as IItemStack[];
+val rcsteel = [<Railcraft:armor.steel.helmet>, <Railcraft:armor.steel.plate>, <Railcraft:armor.steel.legs>, <Railcraft:armor.steel.boots>] as IItemStack[];
+val num = [5, 8, 7, 4] as int[];
+
+//Sword, Shovel, Pickaxe, Axe, Hoe
+val rctool = [<Railcraft:tool.steel.sword>, <Railcraft:tool.steel.shovel>, <Railcraft:tool.steel.pickaxe>, <Railcraft:tool.steel.axe>, <Railcraft:tool.steel.hoe>] as IItemStack[];
+val mekost = [<MekanismTools:OsmiumSword>, <MekanismTools:OsmiumShovel>, <MekanismTools:OsmiumPickaxe>, <MekanismTools:OsmiumAxe>, <MekanismTools:OsmiumHoe>] as IItemStack[];
+val mekbrt = [<MekanismTools:BronzeSword>, <MekanismTools:BronzeShovel>, <MekanismTools:BronzePickaxe>, <MekanismTools:BronzeAxe>, <MekanismTools:BronzeHoe>] as IItemStack[];
+val mekgst = [<MekanismTools:GlowstoneSword>, <MekanismTools:GlowstoneShovel>, <MekanismTools:GlowstonePickaxe>, <MekanismTools:GlowstoneAxe>, <MekanismTools:GlowstoneHoe>] as IItemStack[];
+val mekslt = [<MekanismTools:SteelSword>, <MekanismTools:SteelShovel>, <MekanismTools:SteelPickaxe>, <MekanismTools:SteelAxe>, <MekanismTools:SteelHoe>] as IItemStack[];
+val tooln = [2, 1, 3, 3, 2] as int[];
+
 //Blocks
 val glasses = [<minecraft:glass>, <EnderIO:blockFusedQuartz:1>, <ExtraUtilities:decorativeBlock2:0>,
 	<ExtraUtilities:decorativeBlock2:1>, <ExtraUtilities:decorativeBlock2:2>, <ExtraUtilities:decorativeBlock2:3>,
@@ -42,9 +58,39 @@ Smeltery.removeMelting(<minecraft:redstone_block>);
 //Casting.removeTableRecipe(<Forestry:gearTin>);
 
 //TiC Melt addition
-Smeltery.addMelting(<minecraft:redstone>, <liquid:redstone> * 100, 3000, <minecraft:redstone_block>);
-Smeltery.addMelting(<minecraft:redstone_block>, <liquid:redstone> * 900, 3000, <minecraft:redstone_block>);
+Smeltery.addMelting(<minecraft:redstone>, <liquid:redstone> * 100, 1200, <minecraft:redstone_block>);
+Smeltery.addMelting(<minecraft:redstone_block>, <liquid:redstone> * 900, 1200, <minecraft:redstone_block>);
+for i, eq in osmiumeq{
+	Smeltery.addMelting(eq, <liquid:osmium.molten> * (144 * num[i]), 550, <Mekanism:BasicBlock:0>);
+}
+for i, eq in bronzeeq{
+	Smeltery.addMelting(eq, <liquid:bronze.molten> * (144 * num[i]), 450, <TConstruct:MetalBlock:4>);
+}
+for i, eq in glowstoneeq{
+	Smeltery.addMelting(eq, <liquid:refined.glowstone.molten> * (144 * num[i]), 550, <minecraft:glowstone>);
+}
+for i, eq in steeleq{
+	Smeltery.addMelting(eq, <liquid:steel.molten> * (144 * num[i]), 650, <TConstruct:MetalBlock:9>);
+}
+for i, eq in rcsteel{
+	Smeltery.addMelting(eq, <liquid:steel.molten> * (144 * num[i]), 650, <TConstruct:MetalBlock:9>);
+}
 
+for i, tl in rctool{
+	Smeltery.addMelting(tl, <liquid:steel.molten> * (144 * tooln[i]), 650, <TConstruct:MetalBlock:9>);
+}
+for i, tl in mekslt{
+	Smeltery.addMelting(tl, <liquid:steel.molten> * (144 * tooln[i]), 650, <TConstruct:MetalBlock:9>);
+}
+for i, tl in mekost{
+	Smeltery.addMelting(tl, <liquid:osmium.molten> * (144 * tooln[i]), 650, <Mekanism:BasicBlock:0>);
+}
+for i, tl in mekgst{
+	Smeltery.addMelting(tl, <liquid:refined.glowstone.molten> * (144 * tooln[i]), 650, <minecraft:glowstone>);
+}
+for i, tl in mekbrt{
+	Smeltery.addMelting(tl, <liquid:bronze.molten> * (144 * tooln[i]), 650, <TConstruct:MetalBlock:4>);
+}
 //TiC Alloy addition
 /*
 Smeltery.addAlloy(mltRM * 1, [dstRS * 4, mltIron]);
