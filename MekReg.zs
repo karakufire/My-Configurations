@@ -59,8 +59,26 @@
 * <gas:tritium> -- Tritium
 * <gas:water> -- Water Vapor
 */
+import minetweaker.item.IItemStack;
 import mods.mekanism.Reaction;
 import mods.mekanism.chemical.Injection;
+import mods.mekanism.Crusher;
+
+val diamonds = [
+	<minecraft:diamond_helmet:0>,
+	<minecraft:diamond_chestplate:0>,
+	<minecraft:diamond_leggings:0>,
+	<minecraft:diamond_boots:0>,
+	<minecraft:diamond_sword:0>,
+	<minecraft:diamond_pickaxe:0>,
+	<minecraft:diamond_axe:0>,
+	<minecraft:diamond_shovel:0>,
+	<minecraft:diamond_hoe:0>
+	] as IItemStack[];
+val diamond_amount = [5, 8, 7, 4, 2, 3, 3, 1, 2] as int[];
+for i, eq in diamonds {
+	Crusher.addRecipe(eq, <Mekanism:OtherDust:0> * (diamond_amount[i] - 2));
+}
 
 Injection.addRecipe(<minecraft:stained_hardened_clay:0>, <gas:water>, <minecraft:clay>);
 Injection.addRecipe(<minecraft:stained_hardened_clay:1>, <gas:water>, <minecraft:clay>);
