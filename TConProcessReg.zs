@@ -11,19 +11,64 @@ val meatIngot = <MineFactoryReloaded:meat.ingot.raw:0>;
 val meatNugget = <MineFactoryReloaded:meat.nugget.raw:0>;
 
 //Helm, Chest, Leg, Boots
-val osmiumeq = [<MekanismTools:OsmiumHelmet>, <MekanismTools:OsmiumChestplate>, <MekanismTools:OsmiumLeggings>, <MekanismTools:OsmiumBoots>] as IItemStack[];
-val bronzeeq = [<MekanismTools:BronzeHelmet>, <MekanismTools:BronzeChestplate>, <MekanismTools:BronzeLeggings>, <MekanismTools:BronzeBoots>] as IItemStack[];
-val glowstoneeq = [<MekanismTools:GlowstoneHelmet>, <MekanismTools:GlowstoneChestplate>, <MekanismTools:GlowstoneLeggings>, <MekanismTools:GlowstoneBoots>] as IItemStack[];
-val steeleq = [<MekanismTools:SteelHelmet>, <MekanismTools:SteelChestplate>, <MekanismTools:SteelLeggings>, <MekanismTools:SteelBoots>] as IItemStack[];
-val rcsteel = [<Railcraft:armor.steel.helmet>, <Railcraft:armor.steel.plate>, <Railcraft:armor.steel.legs>, <Railcraft:armor.steel.boots>] as IItemStack[];
+val osmiumeq = [
+	<MekanismTools:OsmiumHelmet>,
+	<MekanismTools:OsmiumChestplate>,
+	<MekanismTools:OsmiumLeggings>,
+	<MekanismTools:OsmiumBoots>] as IItemStack[];
+val bronzeeq = [
+	<MekanismTools:BronzeHelmet>,
+	<MekanismTools:BronzeChestplate>,
+	<MekanismTools:BronzeLeggings>,
+	<MekanismTools:BronzeBoots>] as IItemStack[];
+val glowstoneeq = [
+	<MekanismTools:GlowstoneHelmet>,
+	<MekanismTools:GlowstoneChestplate>,
+	<MekanismTools:GlowstoneLeggings>,
+	<MekanismTools:GlowstoneBoots>] as IItemStack[];
+val steeleq = [
+	<MekanismTools:SteelHelmet>,
+	<MekanismTools:SteelChestplate>,
+	<MekanismTools:SteelLeggings>,
+	<MekanismTools:SteelBoots>] as IItemStack[];
+val rcsteel = [
+	<Railcraft:armor.steel.helmet>,
+	<Railcraft:armor.steel.plate>,
+	<Railcraft:armor.steel.legs>,
+	<Railcraft:armor.steel.boots>] as IItemStack[];
 val num = [5, 8, 7, 4] as int[];
 
 //Sword, Shovel, Pickaxe, Axe, Hoe
-val rctool = [<Railcraft:tool.steel.sword>, <Railcraft:tool.steel.shovel>, <Railcraft:tool.steel.pickaxe>, <Railcraft:tool.steel.axe>, <Railcraft:tool.steel.hoe>] as IItemStack[];
-val mekost = [<MekanismTools:OsmiumSword>, <MekanismTools:OsmiumShovel>, <MekanismTools:OsmiumPickaxe>, <MekanismTools:OsmiumAxe>, <MekanismTools:OsmiumHoe>] as IItemStack[];
-val mekbrt = [<MekanismTools:BronzeSword>, <MekanismTools:BronzeShovel>, <MekanismTools:BronzePickaxe>, <MekanismTools:BronzeAxe>, <MekanismTools:BronzeHoe>] as IItemStack[];
-val mekgst = [<MekanismTools:GlowstoneSword>, <MekanismTools:GlowstoneShovel>, <MekanismTools:GlowstonePickaxe>, <MekanismTools:GlowstoneAxe>, <MekanismTools:GlowstoneHoe>] as IItemStack[];
-val mekslt = [<MekanismTools:SteelSword>, <MekanismTools:SteelShovel>, <MekanismTools:SteelPickaxe>, <MekanismTools:SteelAxe>, <MekanismTools:SteelHoe>] as IItemStack[];
+val rctool = [
+	<Railcraft:tool.steel.sword>,
+	<Railcraft:tool.steel.shovel>,
+	<Railcraft:tool.steel.pickaxe>,
+	<Railcraft:tool.steel.axe>,
+	<Railcraft:tool.steel.hoe>] as IItemStack[];
+val mekost = [
+	<MekanismTools:OsmiumSword>,
+	<MekanismTools:OsmiumShovel>,
+	<MekanismTools:OsmiumPickaxe>,
+	<MekanismTools:OsmiumAxe>,
+	<MekanismTools:OsmiumHoe>] as IItemStack[];
+val mekbrt = [
+	<MekanismTools:BronzeSword>,
+	<MekanismTools:BronzeShovel>,
+	<MekanismTools:BronzePickaxe>,
+	<MekanismTools:BronzeAxe>,
+	<MekanismTools:BronzeHoe>] as IItemStack[];
+val mekgst = [
+	<MekanismTools:GlowstoneSword>,
+	<MekanismTools:GlowstoneShovel>,
+	<MekanismTools:GlowstonePickaxe>,
+	<MekanismTools:GlowstoneAxe>,
+	<MekanismTools:GlowstoneHoe>] as IItemStack[];
+val mekslt = [
+	<MekanismTools:SteelSword>,
+	<MekanismTools:SteelShovel>,
+	<MekanismTools:SteelPickaxe>,
+	<MekanismTools:SteelAxe>,
+	<MekanismTools:SteelHoe>] as IItemStack[];
 val tooln = [2, 1, 3, 3, 2] as int[];
 
 //Blocks
@@ -39,25 +84,20 @@ val mltIron = <liquid:iron.molten>;
 val mltCpr = <liquid:copper.molten>;
 val mltTin = <liquid:tin.molten>;
 val mltAlm = <liquid:aluminum.molten>;
-//val mltRM = <liquid:redmetal.molten>;
 
 //TiC Patterns
 val castIngot = <TConstruct:metalPattern:0>;
 val castNugget = <TConstruct:metalPattern:27>;
 val castGear = <TConstruct:gearCast>;
 
-//TiC Melt remove
+/* Remove */
 Smeltery.removeMelting(<minecraft:redstone>);
 Smeltery.removeMelting(<minecraft:redstone_block>);
-
-//TiC Alloy remove
-
-//TiC Casting remove
 //Casting.removeTableRecipe(<Forestry:gearBronze>);
 //Casting.removeTableRecipe(<Forestry:gearCopper>);
 //Casting.removeTableRecipe(<Forestry:gearTin>);
 
-//TiC Melt addition
+/* Add */
 Smeltery.addMelting(<minecraft:redstone>, <liquid:redstone> * 100, 1200, <minecraft:redstone_block>);
 Smeltery.addMelting(<minecraft:redstone_block>, <liquid:redstone> * 900, 1200, <minecraft:redstone_block>);
 for i, eq in osmiumeq{
@@ -91,13 +131,6 @@ for i, tl in mekgst{
 for i, tl in mekbrt{
 	Smeltery.addMelting(tl, <liquid:bronze.molten> * (144 * tooln[i]), 650, <TConstruct:MetalBlock:4>);
 }
-//TiC Alloy addition
-/*
-Smeltery.addAlloy(mltRM * 1, [dstRS * 4, mltIron]);
-Smeltery.addAlloy(mltRM * 1, [dstRS, mltAlm * 4]);
-*/
-
-//TiC Casting
 Casting.addTableRecipe(meatIngot, lqMeat * 100, castIngot, false, 20);
 Casting.addTableRecipe(meatNugget, lqPSlime * 100, castNugget, false, 20);
 Casting.addTableRecipe(<TConstruct:metalPattern:0>, <liquid:aluminumbrass.molten> * 144, <BigReactors:BRIngot:2>, true, 20);
@@ -108,12 +141,9 @@ for i, glass in glasses{
 	Casting.addBasinRecipe(<ExtraUtilities:decorativeBlock2:4>, <liquid:gold.molten> * 128, glass, true, 20);
 	Casting.addBasinRecipe(<ExtraUtilities:decorativeBlock2:7>, <liquid:glowstone> * 1000, glass, true, 20);
 }
-
-//TiC Drying Recipes
 Drying.addRecipe(netherwart, netherwartDried, 6000);
 Drying.addRecipe(<harvestcraft:muttonrawItem>, <TConstruct:jerky:3>, 6000);
 Drying.addRecipe(<etfuturum:mutton_raw>, <TConstruct:jerky:3>, 6000);
-
 Drying.addRecipe(<minecraft:fish:1>, <TConstruct:jerky:4>, 6000);
 Drying.addRecipe(<minecraft:fish:2>, <TConstruct:jerky:4>, 6000);
 Drying.addRecipe(<harvestcraft:anchovyrawItem>, <TConstruct:jerky:4>, 6000);
