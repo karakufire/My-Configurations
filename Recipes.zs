@@ -34,12 +34,24 @@ recipes.remove(<DraconicEvolution:reactorCraftingPart:3>);
 recipes.remove(<DraconicEvolution:reactorCraftingPart:4>);
 recipes.remove(<DraconicEvolution:reactorStabilizer:0>);
 recipes.remove(<DraconicEvolution:reactorEnergyInjector:0>);
+recipes.remove(<BuildCraft|Silicon:laserBlock:0>);
+recipes.remove(<Mekanism:MachineBlock2:13>);
+recipes.remove(<MineFactoryReloaded:machine.2:1>);
+recipes.remove(<MineFactoryReloaded:machine.2:0>);
 
 /***--- Add Recipes ---***/
 /* // Minecraft //*/
 // Stone slabs from double Stone slab
 recipes.addShapeless(<minecraft:stone_slab:0> * 2,
 [<minecraft:double_stone_slab:0>]);
+
+/* // Build Craft // */
+// Laser
+recipes.addShaped(<BuildCraft|Silicon:laserBlock:0>, [
+	[null, <ore:glass>, null],
+	[<ore:alloyAdvanced>, <ore:gemCrystalFlux>, <ore:alloyAdvanced>],
+	[<ore:blockObsidian>, <ore:circuitBasic>, <ore:blockObsidian>]
+	]);
 
 // Catwalks : Another recipes
 recipes.addShaped(<catwalks:catwalk_unlit_nobottom> * 3, [
@@ -197,13 +209,32 @@ recipes.addShaped(<Mekanism:SaltBlock>, [
 	[<ore:dustSalt>, <ore:dustSalt>],
 	[<ore:dustSalt>, <ore:dustSalt>]
 	]);
+// Laser
+recipes.addShaped(<Mekanism:MachineBlock2:13>,[
+	[null, <ore:alloyElite>, null],
+	[<ore:battery>, <Mekanism:BasicBlock:8>, <ore:battery>],
+	[<ore:alloyElite>, <BuildCraft|Silicon:laserBlock>, <ore:alloyElite>]
+	]);
 // Litium Dust from clays
 Centrifuge.addRecipe([<Mekanism:OtherDust:4> % 5], <minecraft:clay_ball:0>, 200);
 Centrifuge.addRecipe([<Mekanism:OtherDust:4> % 10, <EnderIO:itemMaterial:0> % 80, <minecraft:clay_ball:0> * 2], <minecraft:clay:0>, 800);
 
-// Minefactory Reloaded : Conveyor Belt from Conveyor block
+/* // Minefactory Reloaded //*/
+// Conveyor Belt from Conveyor block
 recipes.addShapeless(<MineFactoryReloaded:conveyor:16> * 2,
 	[<ExtraUtilities:conveyor>]);
+// Laser Drill Precharger
+recipes.addShaped(<MineFactoryReloaded:machine.2:1>, [
+	[<ore:ingotRefinedGlowstone>, <ore:alloyAdvanced>, <ore:ingotRefinedGlowstone>],
+	[<ore:gearLumium>, <Mekanism:MachineBlock2:13>, <MineFactoryReloaded:pinkslime:1>],
+	[<ore:ingotRefinedGlowstone>, <MineFactoryReloaded:machineblock>, <ore:ingotRefinedGlowstone>]
+	]);
+// Laser Drill
+recipes.addShaped(<MineFactoryReloaded:machine.2:0>, [
+	[<ore:gearLumium>, <ore:circuitBasic>, <ore:gearLumium>],
+	[<MekanismGenerators:ReactorGlass:1>, <Mekanism:MachineBlock2:15>, <MekanismGenerators:ReactorGlass:1>],
+	[<Mekanism:TeleportationCore:0>, <MineFactoryReloaded:machineblock:0>, <Mekanism:TeleportationCore:0>]
+	]);
 
 /* // Tinker's Construction // */
 // Seared Block Conversion
