@@ -1,12 +1,12 @@
 /*
 ***#-- ChestLoot --#***
 * bonusChest - can find the first time when allow generate bonus chest
-* dimensionalDungeonChest - deep dark castle-like dugeon's chest
+* dimensionalDungeonChest - in deep dark's castle-like dugeon
 * dungeonChest - spawner chamber
 * mfr:villageZoolologist - Maybe never generated at village
 * mineshaftCorridor - occationary found chest in corridor of mineshaft
 * naturalistChest - villager house which is with 2 apiary
-* pyramidDesertyChest - 4 in desert pyramid, nearby 9 tnts
+* pyramidDesertyChest - 4 in desert pyramid, nearbelow 9 tnts
 * pyramidJungleChest - like temple, groomy and humid
 * pyramidJungleDispenser - then I took an arrow in my knee
 * railcraft:workshop - halfway rails in there

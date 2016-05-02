@@ -107,7 +107,7 @@ for i, eq in bronzeeq{
 	Smeltery.addMelting(eq, <liquid:bronze.molten> * (144 * num[i]), 450, <TConstruct:MetalBlock:4>);
 }
 for i, eq in glowstoneeq{
-	Smeltery.addMelting(eq, <liquid:refined.glowstone.molten> * (144 * num[i]), 550, <minecraft:glowstone>);
+	Smeltery.addMelting(eq, <liquid:refined.glowstone.molten> * (144 * num[i]), 550, <Mekanism:BasicBlock:4>);
 }
 for i, eq in steeleq{
 	Smeltery.addMelting(eq, <liquid:steel.molten> * (144 * num[i]), 650, <TConstruct:MetalBlock:9>);
