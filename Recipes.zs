@@ -71,6 +71,17 @@ recipes.remove(<gendustry:GeneticsProcessor>);
 recipes.remove(<gendustry:EnvProcessor>);
 AssemblyTable.removeRecipe(<gendustry:GeneticsProcessor>);
 AssemblyTable.removeRecipe(<gendustry:EnvProcessor>);
+recipes.remove(<gendustry:MutagenProducer>);
+recipes.remove(<gendustry:Mutatron>);
+recipes.remove(<gendustry:IndustrialApiary>);
+recipes.remove(<gendustry:Imprinter>);
+recipes.remove(<gendustry:Sampler>);
+recipes.remove(<gendustry:MutatronAdv>);
+recipes.remove(<gendustry:Liquifier>);
+recipes.remove(<gendustry:Extractor>);
+recipes.remove(<gendustry:Transposer>);
+recipes.remove(<gendustry:Replicator>);
+recipes.remove(<gendustry:ApiaryUpgrade:*>);
 recipes.remove(<harvestcraft:spamcompressedsaltBlockalt>);
 recipes.remove(<harvestcraft:freshwaterItem>);
 recipes.remove(<Mekanism:MachineBlock2:13>);
@@ -357,6 +368,22 @@ recipes.addShaped(<EnderIO:itemMaterial:10>, [
 	[<ore:dustGlowstone>, <ore:gemDiamond>, <ore:dustGlowstone>],
 	[<minecraft:potion:0> , <ore:dustGlowstone>, <minecraft:potion:0>]
 	]);
+// Redstone Conduit Insulating
+AssemblyTable.addRecipe(<EnderIO:itemRedstoneConduit:2> * 4, 500,
+	[<EnderIO:itemRedstoneConduit:0> * 4, <EnderIO:itemMaterial:1> * 3]);
+// Energy Conduit Upgrade
+AssemblyTable.addRecipe(<EnderIO:itemPowerConduit:1> * 8, 1000,
+	[<EnderIO:itemPowerConduit:0> * 8, <EnderIO:itemAlloy:1> * 3]);
+AssemblyTable.addRecipe(<EnderIO:itemPowerConduit:2> * 8, 2000,
+	[<EnderIO:itemPowerConduit:1> * 8, <EnderIO:itemAlloy:2> * 3]);
+
+/* // EnderIO Addons // */
+// Farming Base Module
+recipes.addShaped(<enderioaddons:itemMachineParts:17>, [
+	[<ore:ingotElectricalSteel>, <AgriCraft:cropsItem>, <ore:ingotElectricalSteel>],
+	[<AgriCraft:cropsItem>, <ore:itemSkull>, <AgriCraft:cropsItem>],
+	[<ore:ingotElectricalSteel>, <AgriCraft:cropsItem>, <ore:ingotElectricalSteel>]
+	]);
 
 /* // Et futurum // */
 // Dragon's breath
@@ -478,22 +505,148 @@ Carpenter.addRecipe(<Forestry:hardenedMachine:0>, [
 	], <liquid:water> * 5000, 20);
 // Rainmaker
 ThermionicFabricator.addCast(<Forestry:factory:7>, [
-	[null, <ore:fenceSteel, null>],
-	[<ore:gearInvar>, <Forestry:sturdyMachine:0>, <ore:circuitAdvanced>],
+	[null, <ore:fenceSteel>, null],
+	[<ore:gearInvar>, <Forestry:hardenedMachine:0>, <ore:circuitAdvanced>],
 	[<ImmersiveEngineering:metalDecoration:1>, <ore:fenceSteel>, <ImmersiveEngineering:metalDecoration:1>]
 	], 1000);
 
 /* // Gendustry // */
+// Bee Receptacle
 Inscriber.addRecipe([<Forestry:honeyDrop>, <Forestry:honeydew>],
 	<Forestry:chipsets:1>, <minecraft:redstone>, <gendustry:BeeReceptacle>, "Inscribe");
+// Power Module
 Inscriber.addRecipe([<EnderIO:itemMaterial>, <appliedenergistics2:item.ItemMultiMaterial:5>],
 	<Forestry:chipsets:1>, <EnderIO:itemBasicCapacitor>, <gendustry:PowerModule>, "Inscribe");
+// Climate Module
 Inscriber.addRecipe([<EnderIO:itemMaterial>, <appliedenergistics2:item.ItemMultiMaterial:5>],
 	<Forestry:chipsets:1>, <minecraft:redstone>, <gendustry:ClimateModule>, "Inscribe");
+// Genetics Processor
 AssemblyTable.addRecipe(<gendustry:GeneticsProcessor>, 8000,
 	[<ore:circuitBasic>, <ore:itemSilicon>, <ore:gemDiamond>, <ore:gemQuartz>]);
+// Enviromental Processor
 AssemblyTable.addRecipe(<gendustry:EnvProcessor>, 8000,
 	[<ore:circuitBasic>, <ore:itemSilicon>, <ore:gemDiamond>, <ore:gemQuartz>]);
+// Mutagen Producer
+recipes.addShaped(<gendustry:MutagenProducer>, [
+	[<ore:ingotBronze>, <gendustry:PowerModule>, <ore:ingotBronze>],
+	[<ore:ingotYellorium>, <Forestry:hardenedMachine>, <ore:ingotCyanite>],
+	[<ore:gearBronze>, <gendustry:MutagenTank>, <ore:gearBronze>]
+	]);
+// Mutatron
+recipes.addShaped(<gendustry:Mutatron>, [
+	[<gendustry:BeeReceptacle>, <gendustry:GeneticsProcessor>, <ore:ingotBronze>],
+	[<gendustry:PowerModule>, <Forestry:hardenedMachine>, <gendustry:BeeReceptacle>],
+	[<gendustry:BeeReceptacle>, <gendustry:MutagenTank>, <ore:ingotBronze>]
+	]);
+// Industrial Apiary
+recipes.addShaped(<gendustry:IndustrialApiary>, [
+	[<ore:ingotIron>, <gendustry:PowerModule>, <ore:ingotIron>],
+	[<gendustry:BeeReceptacle>, <Forestry:apiculture:0>, <gendustry:BeeReceptacle>],
+	[<ore:ingotIron>, <ore:gearBronze>, <ore:ingotIron>]
+	]);
+// Genetic Imprinter
+recipes.addShaped(<gendustry:Imprinter>, [
+	[<gendustry:PowerModule>, <gendustry:GeneticsProcessor>, <gendustry:PowerModule>],
+	[<gendustry:BeeReceptacle>, <appliedenergistics2:tile.BlockInscriber:0>, <gendustry:BeeReceptacle>],
+	[<ore:ingotBronze>, <Forestry:hardenedMachine>, <ore:ingotBronze>]
+	]);
+// Genetic Sampler
+recipes.addShaped(<gendustry:Sampler>, [
+	[<ore:ingotBronze>, <gendustry:GeneticsProcessor>, <ore:circuitAdvanced>],
+	[<gendustry:BeeReceptacle>, <Forestry:hardenedMachine>, <ore:ingotBronze>],
+	[<ore:ingotBronze>, <gendustry:PowerModule>, <ore:circuitAdvanced>]
+	]);
+// Advanced Mutatron
+recipes.addShaped(<gendustry:MutatronAdv>, [
+	[<ore:circuitAdvanced>, <gendustry:PowerModule>, <ore:circuitAdvanced>],
+	[<gendustry:GeneticsProcessor>, <gendustry:Mutatron>, <gendustry:GeneticsProcessor>],
+	[<ore:ingotBronze>, <gendustry:PowerModule>, <ore:ingotBronze>]
+	]);
+// Protain Liquifier
+recipes.addShaped(<gendustry:Liquifier>, [
+	[null, <ore:gearBronze>, null],
+	[<gendustry:PowerModule>, <Forestry:factory:5>, <gendustry:PowerModule>],
+	[null, <Forestry:hardenedMachine>, null]
+	]);
+// DNA Extractor
+recipes.addShaped(<gendustry:Extractor>, [
+	[null, <gendustry:GeneticsProcessor>, null],
+	[<gendustry:PowerModule>, <Forestry:factory:5>, <gendustry:PowerModule>],
+	[null, <Forestry:hardenedMachine>, null]
+	]);
+// Genetic Transposer
+recipes.addShaped(<gendustry:Transposer>, [
+	[<gendustry:PowerModule>, <gendustry:GeneticsProcessor>, <gendustry:PowerModule>],
+	[<ore:circuitAdvanced>, <Forestry:factory:1>, <ore:circuitAdvanced>],
+	[<gendustry:PowerModule>, <Forestry:hardenedMachine>, <gendustry:PowerModule>]
+	]);
+// Genetic Replicator
+recipes.addShaped(<gendustry:Replicator>, [
+	[<gendustry:PowerModule>, <gendustry:GeneticsProcessor>, <gendustry:PowerModule>],
+	[<ore:itemPulsatingCrystal>, <Forestry:factory:1>, <EnderIO:blockTank:1>],
+	[<gendustry:GeneticsProcessor>, <Forestry:hardenedMachine>, <gendustry:GeneticsProcessor>]
+	]);
+// #Apiary Upgrade
+// Hell Emulation
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:13>, 64000,
+	[<gendustry:UpgradeFrame>, <gendustry:EnvProcessor>, <gendustry:ClimateModule>, <minecraft:netherrack>]);
+// Desert Emulation
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:16>, 64000,
+	[<gendustry:UpgradeFrame>, <gendustry:EnvProcessor>, <gendustry:ClimateModule>, <minecraft:sand:*>]);
+// Jungle Emulation
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:18>, 64000,
+	[<gendustry:UpgradeFrame>, <gendustry:EnvProcessor>, <gendustry:ClimateModule>, <ore:stoneMossy>]);
+// Plains Emulation
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:17>, 64000,
+	[<gendustry:UpgradeFrame>, <gendustry:EnvProcessor>, <gendustry:ClimateModule>, <minecraft:dirt>]);
+// Ocean Emulation
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:21>, 64000,
+	[<gendustry:UpgradeFrame>, <gendustry:EnvProcessor>, <gendustry:ClimateModule>, <minecraft:water_bucket>]);
+// Winter Emulation
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:20>, 64000,
+	[<gendustry:UpgradeFrame>, <gendustry:EnvProcessor>, <gendustry:ClimateModule>, <minecraft:snow>]);
+// Dryer
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:5>, 64000,
+	[<gendustry:UpgradeFrame>, <factorization:acid>]);
+// Humidifier
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:4>, 64000,
+	[<gendustry:UpgradeFrame>, <Railcraft:fluid.steam.bottle>]);
+// Heater
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:6>, 64000,
+	[<gendustry:UpgradeFrame>, <ore:dustBlaze>]);
+// Cooler
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:7>, 64000,
+	[<gendustry:UpgradeFrame>, <ore:dustBlizz>]);
+// Automation
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:14>, 64000,
+	[<gendustry:UpgradeFrame>, <ore:gearTin>]);
+// Open Sky
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:12>, 64000,
+	[<gendustry:UpgradeFrame>, <ore:dustBlitz>]);
+// Territory
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:3>, 64000,
+	[<gendustry:UpgradeFrame>, <BuildCraft|Core:markerBlock>]);
+// Seal
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:10>, 64000,
+	[<gendustry:UpgradeFrame>, <BuildCraft|Transport:pipeWaterproof>]);
+// Genetic Stablizer
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:19>, 64000,
+	[<gendustry:UpgradeFrame>, <gendustry:GeneticsProcessor>]);
+// Lifespan
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:1>, 64000,
+	[<gendustry:UpgradeFrame>, <minecraft:clock>]);
+// Flowering
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:2>, 64000,
+	[<gendustry:UpgradeFrame>, <ore:flower>]);
+// Pollen Scribber
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:22>, 64000,
+	[<gendustry:UpgradeFrame>, <ore:pulpWood>]);
+// Production
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:0>, 64000,
+	[<gendustry:UpgradeFrame>, <ore:dropRoyalJelly>, <minecraft:dye:3>]);
+// Sieve
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:15>, 64000,
+	[<gendustry:UpgradeFrame>, <Forestry:craftingMaterial:3>]);
 
 /* // Grimoire of Gaia // */
 // Meat pie
