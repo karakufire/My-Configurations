@@ -80,22 +80,18 @@ for i, eq in diamonds {
 	Crusher.addRecipe(eq, <Mekanism:OtherDust:0> * (diamond_amount[i] - 2));
 }
 
-Injection.addRecipe(<minecraft:stained_hardened_clay:0>, <gas:water>, <minecraft:clay>);
-Injection.addRecipe(<minecraft:stained_hardened_clay:1>, <gas:water>, <minecraft:clay>);
-Injection.addRecipe(<minecraft:stained_hardened_clay:2>, <gas:water>, <minecraft:clay>);
-Injection.addRecipe(<minecraft:stained_hardened_clay:3>, <gas:water>, <minecraft:clay>);
-Injection.addRecipe(<minecraft:stained_hardened_clay:4>, <gas:water>, <minecraft:clay>);
-Injection.addRecipe(<minecraft:stained_hardened_clay:5>, <gas:water>, <minecraft:clay>);
-Injection.addRecipe(<minecraft:stained_hardened_clay:6>, <gas:water>, <minecraft:clay>);
-Injection.addRecipe(<minecraft:stained_hardened_clay:7>, <gas:water>, <minecraft:clay>);
-Injection.addRecipe(<minecraft:stained_hardened_clay:8>, <gas:water>, <minecraft:clay>);
-Injection.addRecipe(<minecraft:stained_hardened_clay:9>, <gas:water>, <minecraft:clay>);
-Injection.addRecipe(<minecraft:stained_hardened_clay:10>, <gas:water>, <minecraft:clay>);
-Injection.addRecipe(<minecraft:stained_hardened_clay:11>, <gas:water>, <minecraft:clay>);
-Injection.addRecipe(<minecraft:stained_hardened_clay:12>, <gas:water>, <minecraft:clay>);
-Injection.addRecipe(<minecraft:stained_hardened_clay:13>, <gas:water>, <minecraft:clay>);
-Injection.addRecipe(<minecraft:stained_hardened_clay:14>, <gas:water>, <minecraft:clay>);
-Injection.addRecipe(<minecraft:stained_hardened_clay:15>, <gas:water>, <minecraft:clay>);
-
-Reaction.addRecipe(<Forestry:phosphor:0>, <liquid:water> * 1000, <gas:sodium> * 200, 
-	<Forestry:fertilizerCompound:0> * 20, <gas:water> * 500, 100, 600);
+val diamonds = [
+	<minecraft:diamond_helmet:0>,
+	<minecraft:diamond_chestplate:0>,
+	<minecraft:diamond_leggings:0>,
+	<minecraft:diamond_boots:0>,
+	<minecraft:diamond_sword:0>,
+	<minecraft:diamond_pickaxe:0>,
+	<minecraft:diamond_axe:0>,
+	<minecraft:diamond_shovel:0>,
+	<minecraft:diamond_hoe:0>
+	] as IItemStack[];
+val diamond_amount = [5, 8, 7, 4, 2, 3, 3, 1, 2] as int[];
+for i, eq in diamonds {
+	Crusher.addRecipe(eq, <Mekanism:OtherDust:0> * (diamond_amount[i] - 2));
+}
