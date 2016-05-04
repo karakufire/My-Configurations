@@ -1,4 +1,5 @@
 /***--- Imports ---***/
+import mods.appeng.Inscriber;
 import mods.buildcraft.AssemblyTable;
 import mods.extraUtils.QED;
 import mods.forestry.ThermionicFabricator;
@@ -63,6 +64,13 @@ recipes.remove(<Forestry:factory:6>);
 recipes.remove(<Forestry:factory:7>);
 recipes.remove(<Forestry:factory2:0>);
 recipes.remove(<GardenStuff:stone_block>);
+recipes.remove(<gendustry:BeeReceptacle>);
+recipes.remove(<gendustry:PowerModule>);
+recipes.remove(<gendustry:ClimateModule>);
+recipes.remove(<gendustry:GeneticsProcessor>);
+recipes.remove(<gendustry:EnvProcessor>);
+AssemblyTable.removeRecipe(<gendustry:GeneticsProcessor>);
+AssemblyTable.removeRecipe(<gendustry:EnvProcessor>);
 recipes.remove(<harvestcraft:spamcompressedsaltBlockalt>);
 recipes.remove(<harvestcraft:freshwaterItem>);
 recipes.remove(<Mekanism:MachineBlock2:13>);
@@ -475,7 +483,19 @@ ThermionicFabricator.addCast(<Forestry:factory:7>, [
 	[<ImmersiveEngineering:metalDecoration:1>, <ore:fenceSteel>, <ImmersiveEngineering:metalDecoration:1>]
 	], 1000);
 
-/* // Grimoire of Gaia //*/
+/* // Gendustry // */
+Inscriber.addRecipe([<Forestry:honeyDrop>, <Forestry:honeydew>],
+	<Forestry:chipsets:1>, <minecraft:redstone>, <gendustry:BeeReceptacle>, "Inscribe");
+Inscriber.addRecipe([<EnderIO:itemMaterial>, <appliedenergistics2:item.ItemMultiMaterial:5>],
+	<Forestry:chipsets:1>, <EnderIO:itemBasicCapacitor>, <gendustry:PowerModule>, "Inscribe");
+Inscriber.addRecipe([<EnderIO:itemMaterial>, <appliedenergistics2:item.ItemMultiMaterial:5>],
+	<Forestry:chipsets:1>, <minecraft:redstone>, <gendustry:ClimateModule>, "Inscribe");
+AssemblyTable.addRecipe(<gendustry:GeneticsProcessor>, 8000,
+	[<ore:circuitBasic>, <ore:itemSilicon>, <ore:gemDiamond>, <ore:gemQuartz>]);
+AssemblyTable.addRecipe(<gendustry:EnvProcessor>, 8000,
+	[<ore:circuitBasic>, <ore:itemSilicon>, <ore:gemDiamond>, <ore:gemQuartz>]);
+
+/* // Grimoire of Gaia // */
 // Meat pie
 recipes.addShapeless(<GrimoireOfGaia:item.GrimoireOfGaia.FoodPieMeat>,
 	[<ore:listAllmeatcooked>, <ore:listAllmeatcooked>, <ore:listAllmeatcooked>, <ore:listAllegg>, <ore:listAllsugar>]);
