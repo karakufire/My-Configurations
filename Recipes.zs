@@ -85,6 +85,10 @@ recipes.remove(<gendustry:ApiaryUpgrade:*>);
 recipes.remove(<harvestcraft:spamcompressedsaltBlockalt>);
 recipes.remove(<harvestcraft:freshwaterItem>);
 recipes.remove(<Mekanism:MachineBlock2:13>);
+recipes.remove(<Mekanism:BasicBlock:9>);
+recipes.remove(<Mekanism:BasicBlock2:0>);
+recipes.remove(<Mekanism:BasicBlock:15>);
+recipes.remove(<Mekanism:BasicBlock:14>);
 recipes.remove(<MineFactoryReloaded:machineblock:0>);
 recipes.remove(<MineFactoryReloaded:machine.0:0>);
 recipes.remove(<MineFactoryReloaded:machine.0:1>);
@@ -138,6 +142,34 @@ recipes.remove(<Railcraft:cube:2>);
 recipes.remove(<Railcraft:cube:9>);
 recipes.remove(<Railcraft:cube:10>);
 recipes.remove(<Railcraft:cube:11>);
+recipes.removeShaped(<Railcraft:machine.beta:0>, [
+	[<Railcraft:part.plate:0>, <Railcraft:part.plate:0>],
+	[<Railcraft:part.plate:0>, <Railcraft:part.plate:0>]
+	]);
+recipes.removeShaped(<Railcraft:machine.beta:1>, [
+	[<minecraft:glass_pane>, <Railcraft:part.plate:0>, <minecraft:glass_pane>],
+	[<Railcraft:part.plate:0>, <minecraft:glass_pane>, <Railcraft:part.plate:0>],
+	[<minecraft:glass_pane>, <Railcraft:part.plate:0>, <minecraft:glass_pane>]
+	]);
+recipes.removeShaped(<Railcraft:machine.beta:2>, [
+	[<minecraft:iron_bars>, <Railcraft:part.plate:0>, <minecraft:iron_bars>],
+	[<Railcraft:part.plate:0>, <minecraft:lever>, <Railcraft:part.plate:0>],
+	[<minecraft:iron_bars>, <Railcraft:part.plate:0>, <minecraft:iron_bars>]
+	]);
+recipes.removeShaped(<Railcraft:machine.beta:13>, [
+	[<Railcraft:part.plate:1>, <Railcraft:part.plate:1>],
+	[<Railcraft:part.plate:1>, <Railcraft:part.plate:1>]
+	]);
+recipes.removeShaped(<Railcraft:machine.beta:14>, [
+	[<minecraft:glass_pane>, <Railcraft:part.plate:1>, <minecraft:glass_pane>],
+	[<Railcraft:part.plate:1>, <minecraft:glass_pane>, <Railcraft:part.plate:1>],
+	[<minecraft:glass_pane>, <Railcraft:part.plate:1>, <minecraft:glass_pane>]
+	]);
+recipes.removeShaped(<Railcraft:machine.beta:15>, [
+	[<minecraft:iron_bars>, <Railcraft:part.plate:1>, <minecraft:iron_bars>],
+	[<Railcraft:part.plate:1>, <minecraft:lever>, <Railcraft:part.plate:1>],
+	[<minecraft:iron_bars>, <Railcraft:part.plate:1>, <minecraft:iron_bars>]
+	]);
 Casting.removeTableRecipe(<ThermalExpansion:Plate:1>);
 Casting.removeTableRecipe(<ThermalExpansion:Plate:2>);
 Casting.removeTableRecipe(<ThermalExpansion:Plate:3>);
@@ -381,7 +413,7 @@ AssemblyTable.addRecipe(<EnderIO:itemPowerConduit:2> * 8, 2000,
 // Farming Base Module
 recipes.addShaped(<enderioaddons:itemMachineParts:17>, [
 	[<ore:ingotElectricalSteel>, <AgriCraft:cropsItem>, <ore:ingotElectricalSteel>],
-	[<AgriCraft:cropsItem>, <ore:itemSkull>, <AgriCraft:cropsItem>],
+	[<AgriCraft:cropsItem>, <EnderIO:itemBasicCapacitor>, <AgriCraft:cropsItem>],
 	[<ore:ingotElectricalSteel>, <AgriCraft:cropsItem>, <ore:ingotElectricalSteel>]
 	]);
 
@@ -468,35 +500,35 @@ recipes.addShaped(<Forestry:factory:0>, [
 	[<ore:ingotBronze>, <ore:glass>, <ore:ingotBronze>]
 	]);
 // Centrifuge
-Carpenter.addRecipe(<Forestry:factory:2>, [
+recipes.addShaped(<Forestry:factory:2>, [
 	[<ore:ingotBronze>, <ore:gearInvar>, <ore:ingotBronze>],
 	[<ore:alloyAdvanced>, <Forestry:sturdyMachine:0>, <ore:alloyAdvanced>],
 	[<minecraft:piston:0>, <minecraft:chest:0>, <minecraft:piston:0>]
-	], <liquid:water> * 1000, 20);
+	]);
 // Fermenter
-Carpenter.addRecipe(<Forestry:factory:3>, [
+recipes.addShaped(<Forestry:factory:3>, [
 	[<ore:ingotBronze>, <minecraft:chest:0>, <ore:ingotBronze>],
 	[<ThermalExpansion:Tank:1>, <Forestry:sturdyMachine:0>, <ThermalExpansion:Tank:1>],
 	[<ore:ingotBronze>, <minecraft:furnace:0>, <ore:ingotBronze>]
-	], <liquid:water> * 1000, 20);
+	]);
 // Moistener
-Carpenter.addRecipe(<Forestry:factory:4>, [
+recipes.addShaped(<Forestry:factory:4>, [
 	[<ore:ingotBronze>, <Mekanism:GasTank:100>, <ore:ingotBronze>],
 	[<ThermalExpansion:Tank:1>, <Forestry:sturdyMachine:0>, <minecraft:furnace>],
 	[<ore:ingotBronze>, <minecraft:cauldron:0>, <ore:ingotBronze>]
-	], <liquid:water> * 1000, 20);
+	]);
 // Squeezer
-Carpenter.addRecipe(<Forestry:factory:5>, [
+recipes.addShaped(<Forestry:factory:5>, [
 	[<ore:ingotBronze>, <ore:ingotBronze>, <ore:ingotBronze>],
 	[<minecraft:piston>, <Forestry:sturdyMachine:0>, <minecraft:piston>],
 	[<minecraft:chest>, <minecraft:hopper>, <ThermalExpansion:Tank:1>]
-	], <liquid:water> * 1000, 20);
+	]);
 // Still
-Carpenter.addRecipe(<Forestry:factory:6>, [
+recipes.addShaped(<Forestry:factory:6>, [
 	[<ore:ingotBronze>, <Mekanism:GasTank:100>, <ore:ingotBronze>],
 	[<Railcraft:machine.beta:6>, <Forestry:sturdyMachine:0>, <Railcraft:machine.beta:6>],
 	[<ore:ingotBronze>, <ThermalExpansion:Tank:1>, <ore:ingotBronze>]
-	], <liquid:water> * 1000, 20);
+	]);
 // Hardened Casing
 Carpenter.addRecipe(<Forestry:hardenedMachine:0>, [
 	[null, <ore:ingotInvar>, null],
@@ -719,6 +751,30 @@ recipes.addShaped(<Mekanism:SaltBlock>, [
 AssemblyTable.addRecipe(<Mekanism:ControlCircuit:1>, 1000, [<ore:circuitBasic>, <ore:alloyAdvanced>]);
 AssemblyTable.addRecipe(<Mekanism:ControlCircuit:2>, 2000, [<ore:circuitAdvanced>, <ore:alloyElite>]);
 AssemblyTable.addRecipe(<Mekanism:ControlCircuit:3>, 4000, [<ore:circuitElite>, <ore:alloyUltimate>]);
+// Dynamic Tank
+recipes.addShaped(<Mekanism:BasicBlock:9> * 16, [
+	[null, <ImmersiveEngineering:metalDecoration2:2>, null],
+	[<ImmersiveEngineering:metalDecoration2:2>, <ore:cobblestone>, <ImmersiveEngineering:metalDecoration2:2>],
+	[null, <ImmersiveEngineering:metalDecoration2:2>, null]
+	]);
+// Solar Evapolation Block
+recipes.addShaped(<Mekanism:BasicBlock2:0> * 4, [
+	[<ore:plateCopper>, <Mekanism:BasicBlock:9>, <ore:plateCopper>],
+	[<Mekanism:BasicBlock:9>, <ore:plateCopper>, <Mekanism:BasicBlock:9>],
+	[<ore:plateCopper>, <Mekanism:BasicBlock:9>, <ore:plateCopper>]
+	]);
+// Solar Evapolation Valve
+recipes.addShaped(<Mekanism:BasicBlock:15>, [
+	[null, <ore:circuitBasic>, null],
+	[<ore:plateCopper>, <Mekanism:BasicBlock:11>, <ore:plateCopper>],
+	[null, <ore:circuitBasic>, null]
+	]);
+// Solar Evapolation Controller
+recipes.addShaped(<Mekanism:BasicBlock:14>, [
+	[<ore:circuitBasic>, <ore:plateCopper>, <ore:circuitBasic>],
+	[<Mekanism:MachineBlock2:11>, <Mekanism:BasicBlock:8>, <Mekanism:MachineBlock2:11>],
+	[<ore:circuitBasic>, <ore:plateCopper>, <ore:circuitBasic>]
+	]);
 
 /* // Minefactory Reloaded //*/
 // Conveyor Belt from Conveyor block
@@ -1019,6 +1075,37 @@ recipes.addShaped(<MineFactoryReloaded:machine.2:12>, [
 	]);
 //BioFuel from Bio Fuel
 mods.forestry.Squeezer.addRecipe(<liquid:biofuel> * 25, <Forestry:mulch:0> % 0, [<Mekanism:BioFuel:0>], 1);
+
+/* // Rail Craft// */
+// Tank Recipe
+recipes.addShaped(<Railcraft:machine.beta:0> * 8, [
+	[<ImmersiveEngineering:metalDecoration:10>, <ImmersiveEngineering:metalDecoration:10>],
+	[<ImmersiveEngineering:metalDecoration:10>, <ImmersiveEngineering:metalDecoration:10>]
+	]);
+recipes.addShaped(<Railcraft:machine.beta:1> * 8, [
+	[<ore:paneGlass>, <ImmersiveEngineering:metalDecoration:10>, <ore:paneGlass>],
+	[<ImmersiveEngineering:metalDecoration:10>, <ore:paneGlass>, <ImmersiveEngineering:metalDecoration:10>],
+	[<ore:paneGlass>, <ImmersiveEngineering:metalDecoration:10>, <ore:paneGlass>]
+	]);
+recipes.addShaped(<Railcraft:machine.beta:2> * 2, [
+	[<minecraft:iron_bars>, <ImmersiveEngineering:metalDecoration:10>, <minecraft:iron_bars>],
+	[<ImmersiveEngineering:metalDecoration:10>, <minecraft:lever>, <ImmersiveEngineering:metalDecoration:10>],
+	[<minecraft:iron_bars>, <ImmersiveEngineering:metalDecoration:10>, <minecraft:iron_bars>]
+	]);
+recipes.addShaped(<Railcraft:machine.beta:13> * 8, [
+	[<ImmersiveEngineering:metalDecoration2:2>, <ImmersiveEngineering:metalDecoration2:2>],
+	[<ImmersiveEngineering:metalDecoration2:2>, <ImmersiveEngineering:metalDecoration2:2>]
+	]);
+recipes.addShaped(<Railcraft:machine.beta:14> * 8, [
+	[<ore:paneGlass>, <ImmersiveEngineering:metalDecoration2:2>, <ore:paneGlass>],
+	[<ImmersiveEngineering:metalDecoration2:2>, <ore:paneGlass>, <ImmersiveEngineering:metalDecoration2:2>],
+	[<ore:paneGlass>, <ImmersiveEngineering:metalDecoration2:2>, <ore:paneGlass>]
+	]);
+recipes.addShaped(<Railcraft:machine.beta:15> * 2, [
+	[<ore:barsIron>, <ImmersiveEngineering:metalDecoration2:2>, <ore:barsIron>],
+	[<ImmersiveEngineering:metalDecoration2:2>, <minecraft:lever>, <ImmersiveEngineering:metalDecoration2:2>],
+	[<ore:barsIron>, <ImmersiveEngineering:metalDecoration2:2>, <ore:barsIron>]
+	]);
 
 /* // Tinker's Construction // */
 // Seared Block Conversion
