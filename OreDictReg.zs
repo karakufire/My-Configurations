@@ -34,11 +34,6 @@ val gearStone = <ore:gearStone>;
 val gravel = <ore:gravel>;
 
 //items
-val healthBerry = <GrimoireOfGaia:item.GrimoireOfGaia.FoodBerryHealth>;
-val cureBerry = <GrimoireOfGaia:item.GrimoireOfGaia.FoodBerryCure>;
-val iceBerry = <GrimoireOfGaia:item.GrimoireOfGaia.FoodBerryIce>;
-val fireBerry = <GrimoireOfGaia:item.GrimoireOfGaia.FoodBerryFire>;
-val mandrake = <GrimoireOfGaia:item.GrimoireOfGaia.FoodMandrake>;
 
 val ticjerkyBeef = <TConstruct:jerky:0>;
 val ticjerkyZomb = <TConstruct:jerky:5>;
@@ -61,17 +56,17 @@ nugAl.add(<ImmersiveEngineering:metal:23>);
 dustAl.add(<ImmersiveEngineering:metal:11>);
 
 //Set keys on edibles
-berry.add(healthBerry);
-berry.add(cureBerry);
-berry.add(iceBerry);
-berry.add(fireBerry);
+berry.add(<GrimoireOfGaia:item.GrimoireOfGaia.FoodBerryHealth>);
+berry.add(<GrimoireOfGaia:item.GrimoireOfGaia.FoodBerryCure>);
+berry.add(<GrimoireOfGaia:item.GrimoireOfGaia.FoodBerryIce>);
+berry.add(<GrimoireOfGaia:item.GrimoireOfGaia.FoodBerryFire>);
 
-fruit.add(healthBerry);
-fruit.add(cureBerry);
-fruit.add(iceBerry);
-fruit.add(fireBerry);
+fruit.add(<GrimoireOfGaia:item.GrimoireOfGaia.FoodBerryHealth>);
+fruit.add(<GrimoireOfGaia:item.GrimoireOfGaia.FoodBerryCure>);
+fruit.add(<GrimoireOfGaia:item.GrimoireOfGaia.FoodBerryIce>);
+fruit.add(<GrimoireOfGaia:item.GrimoireOfGaia.FoodBerryFire>);
 
-veggie.add(mandrake);
+veggie.add(<GrimoireOfGaia:item.GrimoireOfGaia.FoodMandrake>);
 
 beefjerky.add(ticjerkyBeef);
 zombjerky.add(ticjerkyZomb);
@@ -160,3 +155,7 @@ gearStone.add(<EnderIO:itemMachinePart:1>);
 <ore:plateCopper>.add(<Railcraft:part.plate:3>);
 <ore:steelRod>.add(<ImmersiveEngineering:material:15>);
 <ore:rodSteel>.add(<ImmersiveEngineering:material:15>);
+<ore:blockCokeBrick>.add(<ImmersiveEngineering:stoneDecoration:1>);
+<ore:blockCokeBrick>.add(<Railcraft:machine.alpha:7>);
+<ore:blockBlastBrick>.add(<ImmersiveEngineering:stoneDecoration:2>);
+<ore:blockBlastBrick>.add(<Railcraft:machine.alpha:12>);

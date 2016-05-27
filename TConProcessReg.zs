@@ -100,6 +100,9 @@ Smeltery.removeMelting(<minecraft:redstone_block>);
 /* Add */
 Smeltery.addMelting(<minecraft:redstone>, <liquid:redstone> * 100, 1200, <minecraft:redstone_block>);
 Smeltery.addMelting(<minecraft:redstone_block>, <liquid:redstone> * 900, 1200, <minecraft:redstone_block>);
+Smeltery.addMelting(<ImmersiveEngineering:material:14>, <liquid:iron.molten> * 72, 550, <minecraft:iron_bars>);
+Smeltery.addMelting(<ImmersiveEngineering:material:15>, <liquid:steel.molten> * 72, 650, <ImmersiveEngineering:metalDecoration:0>);
+Smeltery.addMelting(<ImmersiveEngineering:material:16>, <liquid:aluminum.molten> * 72, 300, <ImmersiveEngineering:metalDecoration:12>);
 for i, eq in osmiumeq{
 	Smeltery.addMelting(eq, <liquid:osmium.molten> * (144 * num[i]), 550, <Mekanism:BasicBlock:0>);
 }

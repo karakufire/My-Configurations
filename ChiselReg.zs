@@ -201,5 +201,23 @@ Groups.addVariation("glass", <ExtraUtilities:decorativeBlock2:3>);
 Groups.addVariation("glass", <ExtraUtilities:decorativeBlock2:6>);
 Groups.addVariation("glass", <ExtraUtilities:decorativeBlock2:9>);
 
+Groups.addGroup("wrought_iron_fence");
+Groups.addVariation("wrought_iron_fence", <GardenStuff:fence:0>);
+Groups.addVariation("wrought_iron_fence", <GardenStuff:fence:1>);
+Groups.addVariation("wrought_iron_fence", <GardenStuff:fence:2>);
+Groups.addVariation("wrought_iron_fence", <GardenStuff:fence:3>);
+
+Groups.addGroup("decorative_pot");
+Groups.addVariation("decorative_pot", <GardenContainers:decorative_pot:0>);
+Groups.addVariation("decorative_pot", <GardenContainers:decorative_pot:1>);
+Groups.addVariation("decorative_pot", <GardenContainers:decorative_pot:2>);
+
+Groups.addVariation("stonebricksmooth", <GardenStuff:moss_brick:0>);
+Groups.addVariation("stonebricksmooth", <GardenStuff:moss_brick:1>);
+Groups.addVariation("stonebricksmooth", <GardenStuff:moss_brick:2>);
+Groups.addVariation("stonebricksmooth", <GardenStuff:moss_brick:3>);
+Groups.addVariation("stonebricksmooth", <GardenStuff:moss_brick:4>);
+Groups.addVariation("stonebricksmooth", <GardenStuff:moss_brick:5>);
+Groups.addVariation("stonebricksmooth", <GardenStuff:moss_brick:6>);
 furnace.remove(<chisel:concrete:0>);
 //mods.thermalexpansion.Furnace.removeRecipe(<chisel:concrete:0>);

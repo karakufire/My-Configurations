@@ -42,6 +42,7 @@ recipes.remove(<DraconicEvolution:reactorCraftingPart:4>);
 recipes.remove(<DraconicEvolution:reactorStabilizer:0>);
 recipes.remove(<DraconicEvolution:reactorEnergyInjector:0>);
 recipes.remove(<EnderIO:itemMaterial:10>);
+recipes.remove(<EnderIO:blockReinforcedObsidian>);
 recipes.remove(<enderioaddons:itemMachineParts:22>);
 recipes.remove(<etfuturum:dragon_breath:0>);
 recipes.remove(<Forestry:canEmpty>);
@@ -142,6 +143,10 @@ recipes.remove(<Railcraft:cube:2>);
 recipes.remove(<Railcraft:cube:9>);
 recipes.remove(<Railcraft:cube:10>);
 recipes.remove(<Railcraft:cube:11>);
+recipes.remove(<Railcraft:machine.beta:3>);
+recipes.remove(<Railcraft:machine.beta:4>);
+recipes.remove(<Railcraft:machine.beta:5>);
+recipes.remove(<Railcraft:machine.beta:6>);
 recipes.removeShaped(<Railcraft:machine.beta:0>, [
 	[<Railcraft:part.plate:0>, <Railcraft:part.plate:0>],
 	[<Railcraft:part.plate:0>, <Railcraft:part.plate:0>]
@@ -408,6 +413,12 @@ AssemblyTable.addRecipe(<EnderIO:itemPowerConduit:1> * 8, 1000,
 	[<EnderIO:itemPowerConduit:0> * 8, <EnderIO:itemAlloy:1> * 3]);
 AssemblyTable.addRecipe(<EnderIO:itemPowerConduit:2> * 8, 2000,
 	[<EnderIO:itemPowerConduit:1> * 8, <EnderIO:itemAlloy:2> * 3]);
+// Reinforced Obsidian
+recipes.addShaped(<EnderIO:blockReinforcedObsidian:0> * 4, [
+	[<EnderIO:blockDarkIronBars:0>, <ore:blockObsidian>, <EnderIO:blockDarkIronBars:0>],
+	[<ore:blockObsidian>, <ore:dustPyrotheum>, <ore:blockObsidian>],
+	[<EnderIO:blockDarkIronBars:0>, <ore:blockObsidian>, <EnderIO:blockDarkIronBars:0>]
+	]);
 
 /* // EnderIO Addons // */
 // Farming Base Module
@@ -471,9 +482,6 @@ recipes.addShaped(<Forestry:refractoryEmpty:0> * 6, [
 	[<Forestry:refractoryWax:0>, null, <Forestry:refractoryWax:0>],
 	[null, <Forestry:refractoryWax:0>, null]
 	]);
-// Fertilizer from phosphor with water in PRC(Mekanism)
-Reaction.addRecipe(<Forestry:phosphor:0>, <liquid:water> * 1000, <gas:sodium> * 200, 
-	<Forestry:fertilizerCompound:0> * 20, <gas:water> * 500, 100, 600);
 //Ethanol Refining
 //!- mods.buildcraft.Refinery.addRecipe(<liquid:bioethanol> * 3, 20, 10, <liquid:biomass> * 10); //-! deprecated
 mods.immersiveengineering.Refinery.addRecipe(<liquid:bioethanol> * 3, <liquid:biomass> * 5, <liquid:biomass> * 5);
@@ -722,10 +730,33 @@ Casting.addTableRecipe(<ImmersiveEngineering:metal:30>, <liquid:iron.molten> * 1
 Casting.addTableRecipe(<ImmersiveEngineering:metal:32>, <liquid:aluminum.molten> * 144, null, false, 20);
 Casting.addTableRecipe(<ImmersiveEngineering:metal:33>, <liquid:lead.molten> * 144, null, false, 20);
 Casting.addTableRecipe(<ImmersiveEngineering:metal:38>, <liquid:steel.molten> * 144, null, false, 20);
+// Aluminium Rod Casting
+Casting.addTableRecipe(<ImmersiveEngineering:material:16>, <liquid:aluminum.molten> * 72, <TConstruct:metalPattern:1>, false, 20);
 // Steel Block declaration
 recipes.addShaped(<ImmersiveEngineering:storage:7>, [
 	[<ore:ingotSteel>, <ore:ingotSteel>, <ore:ingotSteel>],
 	[<ore:ingotSteel>, <ore:ingotSteel>, <ore:ingotSteel>],
+	[<ore:ingotSteel>, <ore:ingotSteel>, <ore:ingotSteel>]
+	]);
+// Coil by Rolling Machine
+Rolling.addShaped(<ImmersiveEngineering:coil:0> * 16, [
+	[<ore:ingotCopper>, <ore:ingotCopper>, <ore:ingotCopper>],
+	[<ore:ingotCopper>, <ore:stickWood>, <ore:ingotCopper>],
+	[<ore:ingotCopper>, <ore:ingotCopper>, <ore:ingotCopper>]
+	]);
+Rolling.addShaped(<ImmersiveEngineering:coil:1> * 16, [
+	[<ore:ingotElectrum>, <ore:ingotElectrum>, <ore:ingotElectrum>],
+	[<ore:ingotElectrum>, <ore:stickWood>, <ore:ingotElectrum>],
+	[<ore:ingotElectrum>, <ore:ingotElectrum>, <ore:ingotElectrum>]
+	]);
+Rolling.addShaped(<ImmersiveEngineering:coil:2> * 16, [
+	[<ore:ingotAluminium>, <ore:ingotSteel>, <ore:ingotAluminium>],
+	[<ore:ingotSteel>, <ore:stickWood>, <ore:ingotSteel>],
+	[<ore:ingotAluminium>, <ore:ingotSteel>, <ore:ingotAluminium>]
+	]);
+Rolling.addShaped(<ImmersiveEngineering:coil:4> * 16, [
+	[<ore:ingotSteel>, <ore:ingotSteel>, <ore:ingotSteel>],
+	[<ore:ingotSteel>, <ore:stickWood>, <ore:ingotSteel>],
 	[<ore:ingotSteel>, <ore:ingotSteel>, <ore:ingotSteel>]
 	]);
 
@@ -1106,6 +1137,34 @@ recipes.addShaped(<Railcraft:machine.beta:15> * 2, [
 	[<ImmersiveEngineering:metalDecoration2:2>, <minecraft:lever>, <ImmersiveEngineering:metalDecoration2:2>],
 	[<ore:barsIron>, <ImmersiveEngineering:metalDecoration2:2>, <ore:barsIron>]
 	]);
+// Solid Fueled Boiler Firebox
+recipes.addShaped(<Railcraft:machine.beta:5>, [
+	[<ore:ingotBrick>, null, <ore:ingotBrick>],
+	[<ore:ingotBrick>, <GrimoireOfGaia:item.GrimoireOfGaia.MiscSoulFire:0>, <ore:ingotBrick>],
+	[<minecraft:furnace:0>, <minecraft:cauldron:0>, <minecraft:furnace:0>]
+	]);
+recipes.addShaped(<Railcraft:machine.beta:5>, [
+	[<TConstruct:materials:2>, null, <TConstruct:materials:2>],
+	[<TConstruct:materials:2>, <GrimoireOfGaia:item.GrimoireOfGaia.MiscSoulFire:0>, <TConstruct:materials:2>],
+	[<minecraft:furnace:0>, <minecraft:cauldron:0>, <minecraft:furnace:0>]
+	]);
+// Liquid Fueled Boiler Firebox
+recipes.addShaped(<Railcraft:machine.beta:6>, [
+	[<ore:plateSteel>, <ore:plateSteel>, <ore:plateSteel>],
+	[<minecraft:cauldron>, <GrimoireOfGaia:item.GrimoireOfGaia.MiscSoulFiery:0>, <minecraft:cauldron>],
+	[<ore:ingotBrick>, <minecraft:furnace:0>, <ore:ingotBrick>]
+	]);
+recipes.addShaped(<Railcraft:machine.beta:6>, [
+	[<ore:plateSteel>, <ore:plateSteel>, <ore:plateSteel>],
+	[<minecraft:cauldron>, <GrimoireOfGaia:item.GrimoireOfGaia.MiscSoulFiery:0>, <minecraft:cauldron>],
+	[<TConstruct:materials:2>, <minecraft:furnace:0>, <TConstruct:materials:2>]
+	]);
+// Low Pressure Boiler Tank
+recipes.addShapeless(<Railcraft:machine.beta:3>, 
+	[<ImmersiveEngineering:metalDecoration:10>, <ImmersiveEngineering:metalDecoration:10>]);
+// High Pressure Boiler Tank
+recipes.addShapeless(<Railcraft:machine.beta:4>, 
+	[<ImmersiveEngineering:metalDecoration2:2>, <ImmersiveEngineering:metalDecoration2:2>]);
 
 /* // Tinker's Construction // */
 // Seared Block Conversion
