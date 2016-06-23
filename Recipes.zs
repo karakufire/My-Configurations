@@ -8,6 +8,8 @@ import mods.forestry.Centrifuge;
 import mods.forestry.Still;
 import mods.immersiveengineering.MetalPress;
 import mods.mekanism.chemical.Injection;
+import mods.mekanism.Enrichment;
+import mods.mekanism.Infuser;
 import mods.mekanism.Crusher;
 import mods.mekanism.Reaction;
 import mods.railcraft.Rolling;
@@ -87,9 +89,13 @@ recipes.remove(<harvestcraft:spamcompressedsaltBlockalt>);
 recipes.remove(<harvestcraft:freshwaterItem>);
 recipes.remove(<Mekanism:MachineBlock2:13>);
 recipes.remove(<Mekanism:BasicBlock:9>);
-recipes.remove(<Mekanism:BasicBlock2:0>);
+recipes.remove(<Mekanism:BasicBlock:10>);
 recipes.remove(<Mekanism:BasicBlock:15>);
 recipes.remove(<Mekanism:BasicBlock:14>);
+recipes.remove(<Mekanism:BasicBlock2:0>);
+recipes.remove(<Mekanism:BasicBlock2:5>);
+//recipes.remove(<Mekanism:MachineBlock3:0>);
+recipes.remove(<MekanismGenerators:Generator:9>);
 recipes.remove(<MineFactoryReloaded:machineblock:0>);
 recipes.remove(<MineFactoryReloaded:machine.0:0>);
 recipes.remove(<MineFactoryReloaded:machine.0:1>);
@@ -175,9 +181,11 @@ recipes.removeShaped(<Railcraft:machine.beta:15>, [
 	[<Railcraft:part.plate:1>, <minecraft:lever>, <Railcraft:part.plate:1>],
 	[<minecraft:iron_bars>, <Railcraft:part.plate:1>, <minecraft:iron_bars>]
 	]);
+Rolling.removeRecipe(<Railcraft:part.plate:2>);
 Casting.removeTableRecipe(<ThermalExpansion:Plate:1>);
 Casting.removeTableRecipe(<ThermalExpansion:Plate:2>);
 Casting.removeTableRecipe(<ThermalExpansion:Plate:3>);
+//recipes.remove(<ThermalExpansion:Frame:10>);
 
 /***--- Add Recipes ---***/
 /* // Minecraft //*/
@@ -265,8 +273,10 @@ recipes.addShaped(<BuildCraft|Silicon:laserBlock:0>, [
 	[<ore:alloyAdvanced>, <ore:gemCrystalFlux>, <ore:alloyAdvanced>],
 	[<ore:blockObsidian>, <ore:circuitBasic>, <ore:blockObsidian>]
 	]);
+// Diamond Gear
+Infuser.addRecipe("DIAMOND", 20, <BuildCraft|Core:goldGearItem>, <BuildCraft|Core:diamondGearItem>);
 
-/* / Catwalks / */
+/* // Catwalks // */
 // catwalk
 recipes.addShaped(<catwalks:catwalk_unlit_nobottom> * 3, [
 	[<catwalks:steelgrate>, null, <catwalks:steelgrate>],
@@ -1165,6 +1175,12 @@ recipes.addShapeless(<Railcraft:machine.beta:3>,
 // High Pressure Boiler Tank
 recipes.addShapeless(<Railcraft:machine.beta:4>, 
 	[<ImmersiveEngineering:metalDecoration2:2>, <ImmersiveEngineering:metalDecoration2:2>]);
+// Tin plate
+Infuser.addRecipe("TIN", 25, <ImmersiveEngineering:metal:30>, <Railcraft:part.plate:2>);
+Infuser.addRecipe("TIN", 25, <Railcraft:part.plate:0>, <Railcraft:part.plate:2>);
+Casting.addTableRecipe(<Railcraft:part.plate:2>, <liquid:tin.molten> * 72, <ImmersiveEngineering:metal:30>, true, 20);
+Casting.addTableRecipe(<Railcraft:part.plate:2>, <liquid:tin.molten> * 72, <Railcraft:part.plate:0>, true, 20);
+Rolling.addShapeless(<Railcraft:part.plate:2>, [<ore:plateIron>, <ore:dustTin>]);
 
 /* // Tinker's Construction // */
 // Seared Block Conversion
