@@ -209,6 +209,22 @@ Injection.addRecipe(<minecraft:stained_hardened_clay:12>, <gas:water>, <minecraf
 Injection.addRecipe(<minecraft:stained_hardened_clay:13>, <gas:water>, <minecraft:clay>);
 Injection.addRecipe(<minecraft:stained_hardened_clay:14>, <gas:water>, <minecraft:clay>);
 Injection.addRecipe(<minecraft:stained_hardened_clay:15>, <gas:water>, <minecraft:clay>);
+// Clay block break up
+recipes.addShapeless(<minecraft:clay_ball> * 4, [<minecraft:clay>]);
+recipes.addShapeless(<minecraft:clay_ball> * 8, [<minecraft:clay>, <minecraft:clay>]);
+recipes.addShapeless(<minecraft:clay_ball> * 12, [<minecraft:clay>, <minecraft:clay>, <minecraft:clay>]);
+recipes.addShapeless(<minecraft:clay_ball> * 16, [<minecraft:clay>, <minecraft:clay>, <minecraft:clay>, <minecraft:clay>]);
+
+/* // Little Addition // */
+furnace.addRecipe(<littlestuff:dust.stone> * 4, <minecraft:stone>);
+recipes.addShapeless(<minecraft:clay>,
+	[<ore:dustStone>, <ore:dustStone>, <ore:dustStone>, <ore:dustStone>, <minecraft:water_bucket>]);
+recipes.addShapeless(<minecraft:clay>,
+	[<ore:dustStone>, <ore:dustStone>, <ore:dustStone>, <ore:dustStone>, <ore:fz.waterBucketLike>]);
+recipes.addShapeless(<minecraft:clay>,
+	[<ore:dustStone>, <ore:dustStone>, <ore:dustStone>, <ore:dustStone>, <harvestcraft:freshwaterItem>]);
+recipes.addShapeless(<minecraft:clay_ball>,
+	[<ore:dustStone>, <minecraft:potion:0>.giveBack(<minecraft:glass_bottle>)]);
 
 /* // Applied Energestics 2 */
 // Crystal Forced Glowth Accelaration in PRC(Mekanism)
@@ -229,6 +245,10 @@ recipes.addShaped(<appliedenergistics2:tile.BlockMolecularAssembler:0>, [
 	[<appliedenergistics2:item.ItemMultiMaterial:43>, <BuildCraft|Silicon:laserTableBlock:1>, <appliedenergistics2:item.ItemMultiMaterial:44>],
 	[<ore:ingotElectricalSteel>, <appliedenergistics2:tile.BlockQuartzGlass:0>, <ore:ingotElectricalSteel>]
 	]);
+
+/* // Big Reactors // */
+furnace.addRecipe(<BigReactors:BRMetalBlock:2>, <ore:blockCharcoal>);
+
 
 /* // Build Craft // */
 // Assembly Table
@@ -287,6 +307,55 @@ recipes.addShaped(<catwalks:steelgrate> * 32, [
 	[<ore:ingotSteel>, null, <ore:ingotSteel>],
 	[null, <ore:ingotSteel>, null],
 	[<ore:ingotSteel>, null, <ore:ingotSteel>]
+	]);
+
+/* // Carpenter's Blocks // */
+// Carpenter's Hammer
+recipes.addShaped(<CarpentersBlocks:itemCarpentersHammer>, [
+	[<ore:ingotCopper>, <ore:ingotCopper>, null],
+	[null, <CarpentersBlocks:blockCarpentersBlock>, <ore:ingotCopper>],
+	[null, <CarpentersBlocks:blockCarpentersBlock>, null],
+	]);
+recipes.addShaped(<CarpentersBlocks:itemCarpentersHammer>, [
+	[<ore:ingotSteel>, <ore:ingotSteel>, null],
+	[null, <CarpentersBlocks:blockCarpentersBlock>, <ore:ingotSteel>],
+	[null, <CarpentersBlocks:blockCarpentersBlock>, null],
+	]);
+recipes.addShaped(<CarpentersBlocks:itemCarpentersHammer>, [
+	[<ore:ingotAluminium>, <ore:ingotAluminium>, null],
+	[null, <CarpentersBlocks:blockCarpentersBlock>, <ore:ingotAluminium>],
+	[null, <CarpentersBlocks:blockCarpentersBlock>, null],
+	]);
+recipes.addShaped(<CarpentersBlocks:itemCarpentersHammer>, [
+	[<ore:ingotBronze>, <ore:ingotBronze>, null],
+	[null, <CarpentersBlocks:blockCarpentersBlock>, <ore:ingotBronze>],
+	[null, <CarpentersBlocks:blockCarpentersBlock>, null],
+	]);
+recipes.addShaped(<CarpentersBlocks:itemCarpentersHammer>, [
+	[<ore:ingotAluminiumBrass>, <ore:ingotAluminiumBrass>, null],
+	[null, <CarpentersBlocks:blockCarpentersBlock>, <ore:ingotAluminiumBrass>],
+	[null, <CarpentersBlocks:blockCarpentersBlock>, null],
+	]);
+// Carpenter's Chisel
+recipes.addShaped(<CarpentersBlocks:itemCarpentersChisel>, [
+	[<ore:ingotCopper>],
+	[<CarpentersBlocks:blockCarpentersBlock>]
+	]);
+recipes.addShaped(<CarpentersBlocks:itemCarpentersChisel>, [
+	[<ore:ingotSteel>],
+	[<CarpentersBlocks:blockCarpentersBlock>]
+	]);
+recipes.addShaped(<CarpentersBlocks:itemCarpentersChisel>, [
+	[<ore:ingotAluminium>],
+	[<CarpentersBlocks:blockCarpentersBlock>]
+	]);
+recipes.addShaped(<CarpentersBlocks:itemCarpentersChisel>, [
+	[<ore:ingotBronze>],
+	[<CarpentersBlocks:blockCarpentersBlock>]
+	]);
+recipes.addShaped(<CarpentersBlocks:itemCarpentersChisel>, [
+	[<ore:ingotAluminiumBrass>],
+	[<CarpentersBlocks:blockCarpentersBlock>]
 	]);
 
 // Chisel : Cloud bottle from Steem bottle
@@ -492,6 +561,23 @@ recipes.addShaped(<Forestry:refractoryEmpty:0> * 6, [
 	[<Forestry:refractoryWax:0>, null, <Forestry:refractoryWax:0>],
 	[null, <Forestry:refractoryWax:0>, null]
 	]);
+// Impregnated Stick
+Carpenter.addRecipe(<Forestry:oakStick> * 2, [
+	[<ore:logWood>],
+	[<ore:logWood>],
+	], <liquid:plantoil> * 100, 20);
+// Proven Frame
+Carpenter.addRecipe(<Forestry:frameProven>, [
+	[<Forestry:oakStick>, <Forestry:oakStick>, <Forestry:oakStick>],
+	[<Forestry:oakStick>, <TConstruct:materials:25>, <Forestry:oakStick>],
+	[<Forestry:oakStick>, <Forestry:oakStick>, <Forestry:oakStick>]
+	], <liquid:for.honey> * 500, 40);
+// Proven Grafter
+Carpenter.addRecipe(<Forestry:grafterProven>, [
+	[null, <ore:nuggetInvar>, <ore:ingotInvar>],
+	[null, <Forestry:oakStick>, <ore:nuggetInvar>],
+	[<Forestry:oakStick>, null, null]
+	], <liquid:for.honey> * 500, 40);
 //Ethanol Refining
 //!- mods.buildcraft.Refinery.addRecipe(<liquid:bioethanol> * 3, 20, 10, <liquid:biomass> * 10); //-! deprecated
 mods.immersiveengineering.Refinery.addRecipe(<liquid:bioethanol> * 3, <liquid:biomass> * 5, <liquid:biomass> * 5);
@@ -771,6 +857,65 @@ Rolling.addShaped(<ImmersiveEngineering:coil:4> * 16, [
 	[<ore:ingotSteel>, <ore:stickWood>, <ore:ingotSteel>],
 	[<ore:ingotSteel>, <ore:ingotSteel>, <ore:ingotSteel>]
 	]);
+// Treated Planks
+Carpenter.addRecipe(<ImmersiveEngineering:treatedWood>, [
+	[<ore:plankWood>]
+	], <liquid:creosote> * 125, 20);
+Carpenter.addRecipe(<ImmersiveEngineering:treatedWood> * 2, [
+	[<ore:plankWood>, <ore:plankWood>]
+	], <liquid:creosote> * 250, 20);
+Carpenter.addRecipe(<ImmersiveEngineering:treatedWood> * 2, [
+	[<ore:plankWood>], [<ore:plankWood>]
+	], <liquid:creosote> * 250, 20);
+Carpenter.addRecipe(<ImmersiveEngineering:treatedWood> * 4, [
+	[<ore:plankWood>, <ore:plankWood>],
+	[<ore:plankWood>, <ore:plankWood>]
+	], <liquid:creosote> * 500, 20);
+Carpenter.addRecipe(<ImmersiveEngineering:treatedWood> * 8, [
+	[null, <ore:plankWood>, <ore:plankWood>],
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>],
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>]
+	], <liquid:creosote> * 1000, 20);
+Carpenter.addRecipe(<ImmersiveEngineering:treatedWood> * 8, [
+	[<ore:plankWood>, null, <ore:plankWood>],
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>],
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>]
+	], <liquid:creosote> * 1000, 20);
+Carpenter.addRecipe(<ImmersiveEngineering:treatedWood> * 8, [
+	[<ore:plankWood>, <ore:plankWood>, null],
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>],
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>]
+	], <liquid:creosote> * 1000, 20);
+Carpenter.addRecipe(<ImmersiveEngineering:treatedWood> * 8, [
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>],
+	[null, <ore:plankWood>, <ore:plankWood>],
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>]
+	], <liquid:creosote> * 1000, 20);
+Carpenter.addRecipe(<ImmersiveEngineering:treatedWood> * 8, [
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>],
+	[<ore:plankWood>, null, <ore:plankWood>],
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>]
+	], <liquid:creosote> * 1000, 20);
+Carpenter.addRecipe(<ImmersiveEngineering:treatedWood> * 8, [
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>],
+	[<ore:plankWood>, <ore:plankWood>, null],
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>]
+	], <liquid:creosote> * 1000, 20);
+Carpenter.addRecipe(<ImmersiveEngineering:treatedWood> * 8, [
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>],
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>],
+	[null, <ore:plankWood>, <ore:plankWood>]
+	], <liquid:creosote> * 1000, 20);
+Carpenter.addRecipe(<ImmersiveEngineering:treatedWood> * 8, [
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>],
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>],
+	[<ore:plankWood>, null, <ore:plankWood>]
+	], <liquid:creosote> * 1000, 20);
+Carpenter.addRecipe(<ImmersiveEngineering:treatedWood> * 8, [
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>],
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>],
+	[<ore:plankWood>, <ore:plankWood>, null]
+	], <liquid:creosote> * 1000, 20);
 
 /* // Mekanism // */
 // HDPE forming pression
@@ -800,23 +945,41 @@ recipes.addShaped(<Mekanism:BasicBlock:9> * 16, [
 	[<ImmersiveEngineering:metalDecoration2:2>, <ore:cobblestone>, <ImmersiveEngineering:metalDecoration2:2>],
 	[null, <ImmersiveEngineering:metalDecoration2:2>, null]
 	]);
-// Solar Evapolation Block
+// Structural Glass
+recipes.addShaped(<Mekanism:BasicBlock:10> * 16, [
+	[null, <ImmersiveEngineering:metalDecoration2:2>, null],
+	[<ImmersiveEngineering:metalDecoration2:2>, <ore:blockGlass>, <ImmersiveEngineering:metalDecoration2:2>],
+	[null, <ImmersiveEngineering:metalDecoration2:2>, null]
+	]);
+// Thermal Evapolation Block
 recipes.addShaped(<Mekanism:BasicBlock2:0> * 4, [
 	[<ore:plateCopper>, <Mekanism:BasicBlock:9>, <ore:plateCopper>],
 	[<Mekanism:BasicBlock:9>, <ore:plateCopper>, <Mekanism:BasicBlock:9>],
 	[<ore:plateCopper>, <Mekanism:BasicBlock:9>, <ore:plateCopper>]
 	]);
-// Solar Evapolation Valve
+// Thermal Evapolation Valve
 recipes.addShaped(<Mekanism:BasicBlock:15>, [
 	[null, <ore:circuitBasic>, null],
 	[<ore:plateCopper>, <Mekanism:BasicBlock:11>, <ore:plateCopper>],
 	[null, <ore:circuitBasic>, null]
 	]);
-// Solar Evapolation Controller
+// Thermal Evapolation Controller
 recipes.addShaped(<Mekanism:BasicBlock:14>, [
 	[<ore:circuitBasic>, <ore:plateCopper>, <ore:circuitBasic>],
 	[<Mekanism:MachineBlock2:11>, <Mekanism:BasicBlock:8>, <Mekanism:MachineBlock2:11>],
 	[<ore:circuitBasic>, <ore:plateCopper>, <ore:circuitBasic>]
+	]);
+// Superheating Element
+recipes.addShaped(<Mekanism:BasicBlock2:5>, [
+	[<ore:alloyAdvanced>, <ore:plateConstantan>, <ore:alloyAdvanced>],
+	[<ore:plateConstantan>, <Mekanism:BasicBlock:8>, <ore:plateConstantan>],
+	[<ore:dustRedstone>, <ore:plateConstantan>, <ore:dustRedstone>],
+	]);
+// Electromagnetic Coil
+recipes.addShaped(<MekanismGenerators:Generator:9>, [
+	[<ore:ingotElectrum>, <ore:ingotSteel>, <ore:ingotElectrum>],
+	[<ore:ingotElectrum>, <Mekanism:EnergyTablet:*>, <ore:ingotElectrum>],
+	[<ore:ingotSteel>, <ImmersiveEngineering:storage:9>, <ore:ingotSteel>]
 	]);
 
 /* // Minefactory Reloaded //*/
@@ -1256,4 +1419,6 @@ recipes.addShaped(<ThermalDynamics:retriever:1> * 2, [
 recipes.addShaped(<ThermalDynamics:retriever> * 2, [
 	[<ore:itemVibrantNugget>, <ore:blockGlass>, <ore:itemVibrantNugget>],
 	[<ore:ingotIron>, <ore:itemPulsatingCrystal>, <ore:ingotIron>]
-	]);	
+	]);
+
+/* // Thermal Expansion //*/
