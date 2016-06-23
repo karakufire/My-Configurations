@@ -716,6 +716,8 @@ recipes.addShapeless(<GrimoireOfGaia:item.GrimoireOfGaia.SpawnCardEnderGirl>,
 	[<GrimoireOfGaia:item.GrimoireOfGaia.SpawnCard>, <ore:pearlEnder>]);
 recipes.addShapeless(<GrimoireOfGaia:item.GrimoireOfGaia.SpawnCardCreeperGirl>,
 	[<GrimoireOfGaia:item.GrimoireOfGaia.SpawnCard>, <ore:dustGunpowder>]);
+// Coal Brick
+Enrichment.addRecipe(<GrimoireOfGaia:item.GrimoireOfGaia.FoodCoalfish:0>, <GrimoireOfGaia:item.GrimoireOfGaia.MiscFurnaceFuel:0>);
 
 /* // Harvestcraft //*/
 // Fresh milk from milk bottle
