@@ -45,6 +45,7 @@ val futureMuttonCkd = <etfuturum:mutton_cooked>;
 
 //remover
 listFishRaw.remove(<harvestcraft:firmtofuItem>);
+<ore:plateTin>.remove(<Railcraft:part.plate:2>);
 
 //block registering
 gravel.add(<etfuturum:old_gravel>);
