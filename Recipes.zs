@@ -19,6 +19,11 @@ import mods.tconstruct.Smeltery;
 
 /***--- Recipes Removing ---***/ //recipes.remove(<>);
 recipes.removeShaped(<minecraft:packed_ice>, [[<minecraft:ice>, <minecraft:ice>],[<minecraft:ice>, <minecraft:ice>]]);
+recipes.removeShaped(<minecraft:ender_pearl>, [
+	[<ore:dustEnderPearl>, <ore:dustEnderPearl>, <ore:dustEnderPearl>],
+	[<ore:dustEnderPearl>, <ore:dustEnderPearl>, <ore:dustEnderPearl>],
+	[<ore:dustEnderPearl>, <ore:dustEnderPearl>, <ore:dustEnderPearl>]
+	]);
 recipes.remove(<appliedenergistics2:tile.BlockMolecularAssembler:0>);
 recipes.remove(<BuildCraft|Silicon:laserBlock:0>);
 recipes.remove(<BuildCraft|Silicon:laserTableBlock:0>);
@@ -34,8 +39,8 @@ recipes.remove(<DraconicEvolution:draconicCore:0>);
 recipes.remove(<DraconicEvolution:wyvernCore:0>);
 recipes.remove(<DraconicEvolution:awakenedCore:0>);
 recipes.remove(<DraconicEvolution:chaoticCore:0>);
-recipes.remove(<DraconicEvolution:draconiumEnergyCore:0>);
-recipes.remove(<DraconicEvolution:draconiumEnergyCore:1>);
+//recipes.remove(<DraconicEvolution:draconiumEnergyCore:0>);
+//recipes.remove(<DraconicEvolution:draconiumEnergyCore:1>);
 recipes.remove(<DraconicEvolution:reactorCraftingPart:0>);
 recipes.remove(<DraconicEvolution:reactorCraftingPart:1>);
 recipes.remove(<DraconicEvolution:reactorCraftingPart:2>);
@@ -43,10 +48,20 @@ recipes.remove(<DraconicEvolution:reactorCraftingPart:3>);
 recipes.remove(<DraconicEvolution:reactorCraftingPart:4>);
 recipes.remove(<DraconicEvolution:reactorStabilizer:0>);
 recipes.remove(<DraconicEvolution:reactorEnergyInjector:0>);
+recipes.remove(<etfuturum:slime>);
 recipes.remove(<EnderIO:itemMaterial:10>);
 recipes.remove(<EnderIO:blockReinforcedObsidian>);
 recipes.remove(<enderioaddons:itemMachineParts:22>);
+recipes.remove(<enderioaddons:itemMachineParts:13>);
 recipes.remove(<etfuturum:dragon_breath:0>);
+recipes.remove(<ExtraUtilities:nodeUpgrade:0>);
+recipes.remove(<ExtraUtilities:nodeUpgrade:2>);
+recipes.remove(<ExtraUtilities:nodeUpgrade:3>);
+QED.removeRecipe(<ExtraUtilities:nodeUpgrade:5>);
+QED.removeRecipe(<ExtraUtilities:nodeUpgrade:6>);
+recipes.remove(<ExtraUtilities:nodeUpgrade:7>);
+recipes.remove(<ExtraUtilities:nodeUpgrade:8>);
+recipes.remove(<ExtraUtilities:nodeUpgrade:9>);
 recipes.remove(<Forestry:canEmpty>);
 recipes.remove(<Forestry:waxCapsule>);
 recipes.remove(<Forestry:refractoryEmpty>);
@@ -145,6 +160,11 @@ recipes.remove(<MineFactoryReloaded:machine.2:12>);
 recipes.remove(<MineFactoryReloaded:machine.2:13>);
 recipes.remove(<MineFactoryReloaded:machine.2:14>);
 recipes.remove(<MineFactoryReloaded:machine.2:15>);
+recipes.remove(<OpenBlocks:flag>);
+recipes.remove(<OpenBlocks:genericUnstackable>);
+recipes.remove(<OpenBlocks:generic:*>);
+recipes.remove(<OpenBlocks:vacuumhopper>);
+recipes.remove(<OpenBlocks:autoanvil:0>);
 recipes.remove(<Railcraft:cube:2>);
 recipes.remove(<Railcraft:cube:9>);
 recipes.remove(<Railcraft:cube:10>);
@@ -214,9 +234,56 @@ recipes.addShapeless(<minecraft:clay_ball> * 4, [<minecraft:clay>]);
 recipes.addShapeless(<minecraft:clay_ball> * 8, [<minecraft:clay>, <minecraft:clay>]);
 recipes.addShapeless(<minecraft:clay_ball> * 12, [<minecraft:clay>, <minecraft:clay>, <minecraft:clay>]);
 recipes.addShapeless(<minecraft:clay_ball> * 16, [<minecraft:clay>, <minecraft:clay>, <minecraft:clay>, <minecraft:clay>]);
+// Clay ball
+recipes.addShapeless(<minecraft:clay_ball> * 4, [<ore:itemSlag>, <ore:itemSlag>, <ore:dirt>, <ore:fz.waterBucketLike>]);
+// Ender Pearl from dust
+for pearl in <ore:dustEnderPearl>.items{
+	Enrichment.addRecipe(pearl, <minecraft:ender_pearl>);
+}
+// Ender Pearl from shard
+recipes.addShapeless(<minecraft:ender_pearl>, [
+	<GrimoireOfGaia:item.GrimoireOfGaia.Shard:5>, <GrimoireOfGaia:item.GrimoireOfGaia.Shard:5>, 
+	<GrimoireOfGaia:item.GrimoireOfGaia.Shard:5>, <GrimoireOfGaia:item.GrimoireOfGaia.Shard:5>
+	]);
+// Bottle o'Enchanting
+mods.thermalexpansion.Transposer.addFillRecipe(5000, <minecraft:glass_bottle>, <minecraft:experience_bottle>, <liquid:xpjuice> * 200);
+// Fix Leaves
+recipes.addShapeless(<minecraft:leaves:0>, [<minecraft:leaves:8>]);
+recipes.addShapeless(<minecraft:leaves:1>, [<minecraft:leaves:9>]);
+recipes.addShapeless(<minecraft:leaves:2>, [<minecraft:leaves:10>]);
+recipes.addShapeless(<minecraft:leaves:3>, [<minecraft:leaves:11>]);
+recipes.addShapeless(<minecraft:leaves:0>, [<minecraft:leaves:12>]);
+recipes.addShapeless(<minecraft:leaves:1>, [<minecraft:leaves:13>]);
+recipes.addShapeless(<minecraft:leaves:2>, [<minecraft:leaves:14>]);
+recipes.addShapeless(<minecraft:leaves:3>, [<minecraft:leaves:15>]);
+// Fix Logs
+recipes.addShapeless(<minecraft:log:0>, [<minecraft:log:4>]);
+recipes.addShapeless(<minecraft:log:0>, [<minecraft:log:8>]);
 
 /* // Little Addition // */
-furnace.addRecipe(<littlestuff:dust.stone> * 4, <minecraft:stone>);
+//furnace.addRecipe(<littlestuff:dust.stone> * 4, <minecraft:stone>);
+recipes.addShapeless(<littlestuff:dust.stone> * 4, 
+	[<minecraft:stone>, <ImmersiveEngineering:tool>]);
+recipes.addShapeless(<littlestuff:dust.stone> * 8, 
+	[<minecraft:stone>, <minecraft:stone>, <ImmersiveEngineering:tool>]);
+recipes.addShapeless(<littlestuff:dust.stone> * 12, 
+	[<minecraft:stone>, <minecraft:stone>, <minecraft:stone>, <ImmersiveEngineering:tool>]);
+recipes.addShapeless(<littlestuff:dust.stone> * 16, 
+	[<minecraft:stone>, <minecraft:stone>, <minecraft:stone>, <minecraft:stone>,
+	<ImmersiveEngineering:tool>]);
+recipes.addShapeless(<littlestuff:dust.stone> * 20, 
+	[<minecraft:stone>, <minecraft:stone>, <minecraft:stone>, <minecraft:stone>, <minecraft:stone>,
+	<ImmersiveEngineering:tool>]);
+recipes.addShapeless(<littlestuff:dust.stone> * 24, 
+	[<minecraft:stone>, <minecraft:stone>, <minecraft:stone>, <minecraft:stone>, <minecraft:stone>, <minecraft:stone>,
+	<ImmersiveEngineering:tool>]);
+recipes.addShapeless(<littlestuff:dust.stone> * 28, 
+	[<minecraft:stone>, <minecraft:stone>, <minecraft:stone>, <minecraft:stone>, <minecraft:stone>, <minecraft:stone>, <minecraft:stone>,
+	<ImmersiveEngineering:tool>]);
+recipes.addShapeless(<littlestuff:dust.stone> * 32, 
+	[<minecraft:stone>, <minecraft:stone>, <minecraft:stone>, <minecraft:stone>,
+	<minecraft:stone>, <minecraft:stone>, <minecraft:stone>, <minecraft:stone>,
+	<ImmersiveEngineering:tool>]);
 recipes.addShapeless(<minecraft:clay>,
 	[<ore:dustStone>, <ore:dustStone>, <ore:dustStone>, <ore:dustStone>, <minecraft:water_bucket>]);
 recipes.addShapeless(<minecraft:clay>,
@@ -228,13 +295,29 @@ recipes.addShapeless(<minecraft:clay_ball>,
 
 /* // Applied Energestics 2 */
 // Crystal Forced Glowth Accelaration in PRC(Mekanism)
-Reaction.addRecipe(<appliedenergistics2:item.ItemCrystalSeed:0>, <liquid:glass.molten> * 1000, <gas:water> * 1000,
+var moltenglass = <liquid:glass.molten>;
+var searedstone = <liquid:stone.seared>;
+var petrotheum = <liquid:petrotheum>;
+Reaction.addRecipe(<appliedenergistics2:item.ItemCrystalSeed:0>, moltenglass * 1000, <gas:water> * 1000,
 	<appliedenergistics2:item.ItemMultiMaterial:10>, <gas:water> * 1000, 1000, 1200);
-Reaction.addRecipe(<appliedenergistics2:item.ItemCrystalSeed:600>, <liquid:glass.molten> * 1000, <gas:water> * 1000,
+Reaction.addRecipe(<appliedenergistics2:item.ItemCrystalSeed:0>, searedstone * 2000, <gas:water> * 1000,
+	<appliedenergistics2:item.ItemMultiMaterial:10>, <gas:water> * 1000, 1000, 1200);
+Reaction.addRecipe(<appliedenergistics2:item.ItemCrystalSeed:0>, petrotheum * 200, <gas:water> * 1000,
+	<appliedenergistics2:item.ItemMultiMaterial:10>, <gas:water> * 1000, 1000, 1200);
+Reaction.addRecipe(<appliedenergistics2:item.ItemCrystalSeed:600>, moltenglass * 1000, <gas:water> * 1000,
 	<appliedenergistics2:item.ItemMultiMaterial:11>, <gas:water> * 1000, 1000, 1200);
-Reaction.addRecipe(<appliedenergistics2:item.ItemCrystalSeed:1200>, <liquid:glass.molten> * 1000, <gas:water> * 1000,
+Reaction.addRecipe(<appliedenergistics2:item.ItemCrystalSeed:600>, searedstone * 2000, <gas:water> * 1000,
+	<appliedenergistics2:item.ItemMultiMaterial:11>, <gas:water> * 1000, 1000, 1200);
+Reaction.addRecipe(<appliedenergistics2:item.ItemCrystalSeed:600>, petrotheum * 200, <gas:water> * 1000,
+	<appliedenergistics2:item.ItemMultiMaterial:11>, <gas:water> * 1000, 1000, 1200);
+Reaction.addRecipe(<appliedenergistics2:item.ItemCrystalSeed:1200>, moltenglass * 1000, <gas:water> * 1000,
+	<appliedenergistics2:item.ItemMultiMaterial:12>, <gas:water> * 1000, 1000, 1200);
+Reaction.addRecipe(<appliedenergistics2:item.ItemCrystalSeed:1200>, searedstone * 2000, <gas:water> * 1000,
+	<appliedenergistics2:item.ItemMultiMaterial:12>, <gas:water> * 1000, 1000, 1200);
+Reaction.addRecipe(<appliedenergistics2:item.ItemCrystalSeed:1200>, petrotheum * 200, <gas:water> * 1000,
 	<appliedenergistics2:item.ItemMultiMaterial:12>, <gas:water> * 1000, 1000, 1200);
 // Molecular Assembler
+/*
 recipes.addShaped(<appliedenergistics2:tile.BlockMolecularAssembler:0>, [
 	[<ore:ingotElectricalSteel>, <appliedenergistics2:tile.BlockQuartzGlass:0>, <ore:ingotElectricalSteel>],
 	[<appliedenergistics2:item.ItemMultiMaterial:44>, <BuildCraft|Silicon:laserTableBlock:1>, <appliedenergistics2:item.ItemMultiMaterial:43>],
@@ -245,10 +328,110 @@ recipes.addShaped(<appliedenergistics2:tile.BlockMolecularAssembler:0>, [
 	[<appliedenergistics2:item.ItemMultiMaterial:43>, <BuildCraft|Silicon:laserTableBlock:1>, <appliedenergistics2:item.ItemMultiMaterial:44>],
 	[<ore:ingotElectricalSteel>, <appliedenergistics2:tile.BlockQuartzGlass:0>, <ore:ingotElectricalSteel>]
 	]);
+*/
+recipes.addShaped(<appliedenergistics2:tile.BlockMolecularAssembler:0>, [
+	[<ore:ingotElectricalSteel>, <appliedenergistics2:tile.BlockQuartzGlass:0>, <ore:ingotElectricalSteel>],
+	[<appliedenergistics2:item.ItemMultiMaterial:44>, <BuildCraft|Factory:autoWorkbenchBlock>, <appliedenergistics2:item.ItemMultiMaterial:43>],
+	[<ore:ingotElectricalSteel>, <appliedenergistics2:tile.BlockQuartzGlass:0>, <ore:ingotElectricalSteel>]
+	]);
+recipes.addShaped(<appliedenergistics2:tile.BlockMolecularAssembler:0>, [
+	[<ore:ingotElectricalSteel>, <appliedenergistics2:tile.BlockQuartzGlass:0>, <ore:ingotElectricalSteel>],
+	[<appliedenergistics2:item.ItemMultiMaterial:43>, <BuildCraft|Factory:autoWorkbenchBlock>, <appliedenergistics2:item.ItemMultiMaterial:44>],
+	[<ore:ingotElectricalSteel>, <appliedenergistics2:tile.BlockQuartzGlass:0>, <ore:ingotElectricalSteel>]
+	]);
+// ME Smart Cable
+recipes.addShapeless(<appliedenergistics2:item.ItemMultiPart:56>, [
+	<appliedenergistics2:item.ItemMultiPart:16>,
+	<ore:blockWool>,
+	<ore:dustGlowstone>,
+	<ore:dustRedstone>
+	]);
+recipes.addShapeless(<appliedenergistics2:item.ItemMultiPart:56> * 4, [
+	<appliedenergistics2:item.ItemMultiPart:76>,
+	<ore:dustRedstone>,
+	<ore:dustRedstone>,
+	<ore:dustRedstone>,
+	<ore:dustGlowstone>,
+	<ore:dustGlowstone>,
+	<ore:dustGlowstone>
+	]);
+// ME Dense Cable
+recipes.addShapeless(<appliedenergistics2:item.ItemMultiPart:76>, [
+	<appliedenergistics2:item.ItemMultiPart:56>,
+	<appliedenergistics2:item.ItemMultiPart:56>.giveBack(<minecraft:redstone> * 3),
+	<appliedenergistics2:item.ItemMultiPart:56>.giveBack(<minecraft:glowstone_dust> * 3),
+	<appliedenergistics2:item.ItemMultiPart:56>
+	]);
+// spacial storage initialze
+var cube = <appliedenergistics2:item.ItemSpatialStorageCell.2Cubed>;
+recipes.addShapeless(cube, [cube]);
+cube = <appliedenergistics2:item.ItemSpatialStorageCell.16Cubed>;
+recipes.addShapeless(cube, [cube]);
+cube = <appliedenergistics2:item.ItemSpatialStorageCell.128Cubed>;
+recipes.addShapeless(cube, [cube]);
+
 
 /* // Big Reactors // */
+// Graphite
 furnace.addRecipe(<BigReactors:BRMetalBlock:2>, <ore:blockCharcoal>);
-
+// Fuel Rod
+recipes.addShaped(<BigReactors:YelloriumFuelRod>, [
+	[<ore:ingotIron>, <ore:ingotSteel>, <ore:ingotIron>],
+	[null, <ore:ingotYellorium>, null],
+	[<ore:ingotIron>, <ore:ingotSteel>, <ore:ingotIron>]
+	]);
+// Reactor Casing
+recipes.addShaped(<BigReactors:BRReactorPart:0> * 4, [
+	[null, <ore:ingotSteel>, null],
+	[<ore:ingotSteel>, <ore:ingotYellorium>, <ore:ingotSteel>],
+	[null, <ore:ingotSteel>, null]
+	]);
+recipes.addShaped(<BigReactors:BRReactorPart:0> * 36, [
+	[null, <ore:blockSteel>, null],
+	[<ore:blockSteel>, <ore:blockYellorium>, <ore:blockSteel>],
+	[null, <ore:blockSteel>, null]
+	]);
+// Reactor Controller
+recipes.addShaped(<BigReactors:BRReactorPart:1>, [
+	[null, <BigReactors:BRReactorPart:0>, null],
+	[<BigReactors:BRReactorPart:0>, <ore:circuitElite>, <BigReactors:BRReactorPart:0>],
+	[null, <BigReactors:BRReactorPart:0>,null]
+	]);
+// Turbine Housing
+recipes.remove(<BigReactors:BRTurbinePart:0>);
+recipes.addShaped(<BigReactors:BRTurbinePart:0> * 4, [
+	[null, <ore:ingotSteel>, null],
+	[<ore:ingotSteel>, <ore:ingotCyanite>, <ore:ingotSteel>],
+	[null, <ore:ingotSteel>, null]
+	]);
+// Turbine Controller
+recipes.remove(<BigReactors:BRTurbinePart:1>);
+recipes.addShaped(<BigReactors:BRTurbinePart:1>, [
+	[null, <BigReactors:BRTurbinePart>, null],
+	[<BigReactors:BRTurbinePart>, <ore:circuitElite>, <BigReactors:BRTurbinePart>],
+	[null, <BigReactors:BRTurbinePart>, null]
+	]);
+// Turbine Bearing
+recipes.remove(<BigReactors:BRTurbinePart:4>);
+recipes.addShaped(<BigReactors:BRTurbinePart:4>, [
+	[<BigReactors:BRTurbinePart>, <BigReactors:BRTurbineRotorPart>, <BigReactors:BRTurbinePart>],
+	[<ore:ingotSteel>, <ImmersiveEngineering:metalDevice:9>, <ore:ingotSteel>],
+	[<BigReactors:BRTurbinePart>, <BigReactors:BRTurbineRotorPart>, <BigReactors:BRTurbinePart>]
+	]);
+// Turbine Rotor Shaft
+recipes.remove(<BigReactors:BRTurbineRotorPart>);
+recipes.addShaped(<BigReactors:BRTurbineRotorPart>, [
+	[<ore:ingotIron>, <ore:alloyAdvanced>, <ore:ingotIron>],
+	[<ore:ingotIron>, <ore:ingotCyanite>, <ore:ingotIron>],
+	[<ore:ingotIron>, <ore:alloyAdvanced>, <ore:ingotIron>]
+	]);
+// Turbine Roter Blade
+recipes.remove(<BigReactors:BRTurbineRotorPart:1>);
+recipes.addShaped(<BigReactors:BRTurbineRotorPart:1> * 4, [
+	[<ore:nuggetSteel>, <ore:plateIron>, <ore:nuggetSteel>],
+	[<ore:plateIron>, <ore:ingotCyanite>, <ore:plateIron>],
+	[<ore:nuggetSteel>, <ore:plateIron>, <ore:nuggetSteel>]
+	]);
 
 /* // Build Craft // */
 // Assembly Table
@@ -295,6 +478,7 @@ recipes.addShaped(<BuildCraft|Silicon:laserBlock:0>, [
 	]);
 // Diamond Gear
 Infuser.addRecipe("DIAMOND", 20, <BuildCraft|Core:goldGearItem>, <BuildCraft|Core:diamondGearItem>);
+Infuser.addRecipe("DIAMOND", 20, <ThermalFoundation:material:13>, <BuildCraft|Core:diamondGearItem>);
 
 /* // Catwalks // */
 // catwalk
@@ -358,10 +542,23 @@ recipes.addShaped(<CarpentersBlocks:itemCarpentersChisel>, [
 	[<CarpentersBlocks:blockCarpentersBlock>]
 	]);
 
-// Chisel : Cloud bottle from Steem bottle
+/* // Chisel // */
+// Cloud bottle from Steem bottle
 recipes.addShaped(<chisel:cloudinabottle>, [
 	[<ore:blockGlass>, <ore:blockGlass>, <ore:blockGlass>],
 	[null, <Railcraft:fluid.steam.bottle>, null]
+	]);
+// Purpled Fantasy Block
+recipes.addShaped(<chisel:fantasyblock> * 8, [
+	[<chisel:fantasyblock2>, <chisel:fantasyblock2>, <chisel:fantasyblock2>],
+	[<chisel:fantasyblock2>, <ore:dyePurple>, <chisel:fantasyblock2>],
+	[<chisel:fantasyblock2>, <chisel:fantasyblock2>, <chisel:fantasyblock2>]
+	]);
+// Fantasy Block
+recipes.addShaped(<chisel:fantasyblock2> * 8, [
+	[<minecraft:stone>, <minecraft:stone>, <minecraft:stone>],
+	[<minecraft:stone>, <ore:nuggetAluminiumBrass>, <minecraft:stone>],
+	[<minecraft:stone>, <minecraft:stone>, <minecraft:stone>]
 	]);
 
 /* // Draconic Evolution // */
@@ -381,7 +578,7 @@ recipes.addShaped(<DraconicEvolution:grinder:3>, [
 recipes.addShaped(<DraconicEvolution:upgradeModifier:0>, [
 	[null, <ore:gearSignalum>, null],
 	[<DraconicEvolution:draconicCore:0>, <ore:gearEnderium>, <DraconicEvolution:draconicCore:0>],
-	[<ore:ingotDraconium>, <EnderIO:blockDarkSteelAnvil:0>, <ore:ingotDraconium>]
+	[<ore:ingotDraconium>, <minecraft:anvil>, <ore:ingotDraconium>]
 	]);
 // Draconium Infused Obsidian
 Carpenter.addRecipe(<DraconicEvolution:infusedObsidian:0> * 8, [
@@ -396,41 +593,87 @@ QED.addShapedRecipe(<DraconicEvolution:chaosFragment:0>, [
 	[<ExtraUtilities:unstableingot:2>, <ExtraUtilities:dark_portal:0>, <ExtraUtilities:unstableingot:2>]
 	]);
 // Draconic Core
+/*
 recipes.addShaped(<DraconicEvolution:draconicCore:0>, [
-	[<ore:ingotPlatinum>, <ore:ingotDraconium>, <ore:ingotPlatinum>],
+	[<ore:ingotEnderiumBase>, <ore:ingotDraconium>, <ore:ingotEnderiumBase>],
 	[<ore:ingotDraconium>, <ore:gearDiamond>, <ore:ingotDraconium>],
-	[<ore:ingotPlatinum>, <ore:ingotDraconium>, <ore:ingotPlatinum>]
+	[<ore:ingotEnderiumBase>, <ore:ingotDraconium>, <ore:ingotEnderiumBase>]
+	]);
+recipes.addShaped(<DraconicEvolution:draconicCore:0>, [
+	[<ore:ingotEnderium>, <ore:ingotDraconium>, null],
+	[<ore:ingotDraconium>, <ore:gearDiamond>, <ore:ingotDraconium>],
+	[null, <ore:ingotDraconium>, <ore:ingotEnderium>]
+	]);
+recipes.addShaped(<DraconicEvolution:draconicCore:0>, [
+	[null, <ore:ingotDraconium>, <ore:ingotEnderium>],
+	[<ore:ingotDraconium>, <ore:gearDiamond>, <ore:ingotDraconium>],
+	[<ore:ingotEnderium>, <ore:ingotDraconium>, null]
+	]);*/
+recipes.addShaped(<DraconicEvolution:draconicCore:0>, [
+	[<ore:ingotEnderiumBase>, <ore:ingotDraconium>, <ore:ingotEnderiumBase>],
+	[<ore:ingotDraconium>, <ore:gemDiamond>, <ore:ingotDraconium>],
+	[<ore:ingotEnderiumBase>, <ore:ingotDraconium>, <ore:ingotEnderiumBase>]
+	]);
+recipes.addShaped(<DraconicEvolution:draconicCore:0>, [
+	[<ore:ingotEnderium>, <ore:ingotDraconium>, null],
+	[<ore:ingotDraconium>, <ore:gemDiamond>, <ore:ingotDraconium>],
+	[null, <ore:ingotDraconium>, <ore:ingotEnderium>]
+	]);
+recipes.addShaped(<DraconicEvolution:draconicCore:0>, [
+	[null, <ore:ingotDraconium>, <ore:ingotEnderium>],
+	[<ore:ingotDraconium>, <ore:gemDiamond>, <ore:ingotDraconium>],
+	[<ore:ingotEnderium>, <ore:ingotDraconium>, null]
 	]);
 // Wyvern Core
 recipes.addShaped(<DraconicEvolution:wyvernCore:0>, [
-	[<ore:ingotFzDarkIron>, <DraconicEvolution:draconicCore:0>, <ore:ingotFzDarkIron>],
-	[<ore:ingotManyullyn>, <ore:itemNetherStar>, <ore:ingotManyullyn>],
-	[<ore:ingotFzDarkIron>, <DraconicEvolution:draconicCore:0>, <ore:ingotFzDarkIron>]
+	[<ore:ingotDarkSteel>, <DraconicEvolution:draconicCore:0>, <ore:ingotDarkSteel>],
+	[<ore:ingotDraconium>, <ore:itemNetherStar>, <ore:ingotDraconium>],
+	[<ore:ingotDarkSteel>, <DraconicEvolution:draconicCore:0>, <ore:ingotDarkSteel>]
 	]);
 // Awakened Core
+/* - High Difficulty
 Carpenter.addRecipe(<DraconicEvolution:awakenedCore:0>, [
 	[<ore:ingotDraconiumAwakened>, <DraconicEvolution:wyvernCore:0>, <ore:ingotDraconiumAwakened>],
 	[<ore:ingotRefinedObsidian>, <ore:circuitUltimate>, <ore:ingotRefinedObsidian>],
 	[<ore:ingotDraconiumAwakened>, <DraconicEvolution:wyvernCore:0>, <ore:ingotDraconiumAwakened>]
-	], <liquid:glowstone> * 4000, 1200);
+	], <liquid:glowstone> * 4000, 1200);*/
+/* - Low Difficulty
+Carpenter.addRecipe(<DraconicEvolution:awakenedCore:0>, [
+	[<ore:ingotDraconiumAwakened>, <DraconicEvolution:wyvernCore:0>, <ore:ingotDraconiumAwakened>],
+	[<ore:ingotRefinedObsidian>, <ore:ingotRefinedGlowstone>, <ore:ingotRefinedObsidian>],
+	[<ore:ingotDraconiumAwakened>, <DraconicEvolution:wyvernCore:0>, <ore:ingotDraconiumAwakened>]
+	], <liquid:glowstone> * 250, 20);*/
+recipes.addShaped(<DraconicEvolution:awakenedCore:0>, [
+	[<ore:ingotDraconiumAwakened>, <DraconicEvolution:wyvernCore:0>, <ore:ingotDraconiumAwakened>],
+	[<ore:ingotRefinedObsidian>, <ore:ingotRefinedGlowstone>, <ore:ingotRefinedObsidian>],
+	[<ore:ingotDraconiumAwakened>, <DraconicEvolution:wyvernCore:0>, <ore:ingotDraconiumAwakened>]
+	]);
 // Chaotic Core
+/*
 Carpenter.addRecipe(<DraconicEvolution:chaoticCore:0>, [
 	[<ore:ingotUnstable>, <DraconicEvolution:awakenedCore:0>, <ore:ingotUnstable>],
 	[<appliedenergistics2:item.ItemMultiMaterial:47>, <DraconicEvolution:chaosShard>, <appliedenergistics2:item.ItemMultiMaterial:47>],
 	[<ore:ingotUnstable>, <DraconicEvolution:awakenedCore:0>, <ore:ingotUnstable>]
-	], <liquid:ender> * 4000, 1200);
+	], <liquid:ender> * 4000, 1200);*/
+Carpenter.addRecipe(<DraconicEvolution:chaoticCore:0>, [
+	[<ore:ingotUnstable>, <DraconicEvolution:awakenedCore:0>, <ore:ingotUnstable>],
+	[<ore:ingotDraconiumAwakened>, <DraconicEvolution:chaosShard>, <ore:ingotDraconiumAwakened>],
+	[<ore:ingotUnstable>, <DraconicEvolution:awakenedCore:0>, <ore:ingotUnstable>]
+	], <liquid:ender> * 1000, 100);
 // Wyvern Energy Core
+/*
 Carpenter.addRecipe(<DraconicEvolution:draconiumEnergyCore:0>, [
 	[<EnderIO:itemBasicCapacitor:2>, <DraconicEvolution:draconicCore:0>, <EnderIO:itemBasicCapacitor:2>],
-	[<ore:ingotSignalum>, <DraconicEvolution:wyvernCore:0>, <ore:ingotSignalum>],
+	[<ore:ingotSignalum>, <ore:circuitElite>, <ore:ingotSignalum>],
 	[<EnderIO:itemBasicCapacitor:2>, <DraconicEvolution:draconicCore:0>, <EnderIO:itemBasicCapacitor:2>]
-	], <liquid:redstone> * 8000, 600);
+	], <liquid:redstone> * 8000, 600);*/
 // Awakened Energy Core
+/*
 Carpenter.addRecipe(<DraconicEvolution:draconiumEnergyCore:1>, [
 	[<DraconicEvolution:draconiumEnergyCore:0>, <DraconicEvolution:wyvernCore:0>, <DraconicEvolution:draconiumEnergyCore:0>],
-	[<ore:ingotEnderium>, <DraconicEvolution:awakenedCore:0>, <ore:ingotEnderium>],
+	[<ore:ingotEnderium>, <ore:circuitUltimate>, <ore:ingotEnderium>],
 	[<DraconicEvolution:draconiumEnergyCore:0>, <DraconicEvolution:wyvernCore:0>, <DraconicEvolution:draconiumEnergyCore:0>]
-	], <liquid:redstone> * 8000, 1800);
+	], <liquid:redstone> * 8000, 1800);*/
 // Reactor Stabilizer Frame
 ThermionicFabricator.addCast(<DraconicEvolution:reactorCraftingPart:0>, [
 	[<TConstruct:toughRod:16>, <ore:plateSteel>, <TConstruct:toughRod:16>],
@@ -472,7 +715,7 @@ recipes.addShaped(<DraconicEvolution:reactorEnergyInjector:0>, [
 	[<MineFactoryReloaded:machine.2:1>, <MineFactoryReloaded:machine.2:1>, <MineFactoryReloaded:machine.2:1>]
 	]);
 
-/* //Ender IO // */
+/* // Ender IO // */
 // Weather Crystal
 recipes.addShaped(<EnderIO:itemMaterial:10>, [
 	[<ore:dustGlowstone>, <minecraft:potion:0>, <ore:dustGlowstone>],
@@ -498,6 +741,13 @@ recipes.addShaped(<EnderIO:blockReinforcedObsidian:0> * 4, [
 	[<ore:blockObsidian>, <ore:dustPyrotheum>, <ore:blockObsidian>],
 	[<EnderIO:blockDarkIronBars:0>, <ore:blockObsidian>, <EnderIO:blockDarkIronBars:0>]
 	]);
+// Machine Chassis
+recipes.addShaped(<EnderIO:itemMachinePart:0>, [
+	[null, <enderioaddons:itemMachineParts:13>, null],
+	[<enderioaddons:itemMachineParts:13>, <EnderIO:itemBasicCapacitor:0>, <enderioaddons:itemMachineParts:13>],
+	[null, <enderioaddons:itemMachineParts:13>, null]
+	]);
+recipes.addShapeless(<EnderIO:itemMachinePart:0>, [<enderioaddons:blockChassis:0>, <EnderIO:itemBasicCapacitor:0>]);
 
 /* // EnderIO Addons // */
 // Farming Base Module
@@ -506,6 +756,13 @@ recipes.addShaped(<enderioaddons:itemMachineParts:17>, [
 	[<AgriCraft:cropsItem>, <EnderIO:itemBasicCapacitor>, <AgriCraft:cropsItem>],
 	[<ore:ingotElectricalSteel>, <AgriCraft:cropsItem>, <ore:ingotElectricalSteel>]
 	]);
+// Chassis Plates
+recipes.addShaped(<enderioaddons:itemMachineParts:13> * 4, [
+	[<minecraft:iron_bars>, <ore:ingotIron>, <minecraft:iron_bars>],
+	[<ore:ingotIron>, null, <ore:ingotIron>],
+	[<minecraft:iron_bars>, <ore:ingotIron>, <minecraft:iron_bars>]
+	]);
+recipes.addShapeless(<enderioaddons:itemMachineParts:13> * 4, [<enderioaddons:blockChassis:0>]);
 
 /* // Et futurum // */
 // Dragon's breath
@@ -532,14 +789,111 @@ recipes.addShaped(<ExtraUtilities:conveyor> * 2, [
 	[<MineFactoryReloaded:conveyor:*>, <MineFactoryReloaded:conveyor:*>],
 	[<MineFactoryReloaded:conveyor:*>, <MineFactoryReloaded:conveyor:*>]
 	]);
-//Deep Dark Portal Another Recipe
+// Magnum Torch another recipe
+QED.addShapedRecipe(<ExtraUtilities:magnumTorch>, [
+	[<ExtraUtilities:chandelier>, <EnderIO:blockEndermanSkull:2>, <ExtraUtilities:chandelier>],
+	[<ore:nuggetGold>, <factorization:FzBlock:6>, <ore:nuggetGold>],
+	[<ore:nuggetGold>, <ore:logWood>, <ore:nuggetGold>]
+	]);
+// Deep Dark Portal Another Recipe
 QED.addShapedRecipe(<ExtraUtilities:dark_portal>, [
 	[<appliedenergistics2:item.ItemMultiMaterial:34>, <ore:blockUnstable>, <appliedenergistics2:item.ItemMultiMaterial:34>],
 	[<appliedenergistics2:item.ItemMultiMaterial:34>, <EnderIO:itemFrankenSkull:3>, <appliedenergistics2:item.ItemMultiMaterial:34>],
 	[<appliedenergistics2:item.ItemMultiMaterial:34>, <ExtraUtilities:block_bedrockium:0>, <appliedenergistics2:item.ItemMultiMaterial:34>]
 	]);
+// Node Upgrades : Speed
+recipes.addShaped(<ExtraUtilities:nodeUpgrade:0> * 4, [
+	[<ore:ingotRedstoneAlloy>, <ore:nuggetAluminiumBrass>, <ore:ingotRedstoneAlloy>],
+	[<ore:nuggetAluminiumBrass>, <ore:ingotAluminiumBrass>, <ore:nuggetAluminiumBrass>],
+	[<ore:ingotRedstoneAlloy>, <ore:ingotAluminiumBrass>, <ore:ingotRedstoneAlloy>]
+	]);
+recipes.addShaped(<ExtraUtilities:nodeUpgrade:0> * 4, [
+	[<ore:ingotRedstoneAlloy>, <ore:nuggetGold>, <ore:ingotRedstoneAlloy>],
+	[<ore:nuggetGold>, <ore:ingotGold>, <ore:nuggetGold>],
+	[<ore:ingotRedstoneAlloy>, <ore:ingotGold>, <ore:ingotRedstoneAlloy>]
+	]);
+// Node Upgrades : Depth-First Search
+recipes.addShaped(<ExtraUtilities:nodeUpgrade:7> * 3, [
+	[<ExtraUtilities:nodeUpgrade:0>, <ore:ingotRedstoneAlloy>, <ore:ingotRedstoneAlloy>],
+	[<ExtraUtilities:nodeUpgrade:0>, <ore:ingotAluminiumBrass>, <ExtraUtilities:nodeUpgrade:0>],
+	[<ore:ingotAluminiumBrass>, <ore:ingotRedstoneAlloy>, <ore:ingotRedstoneAlloy>]
+	]);
+recipes.addShaped(<ExtraUtilities:nodeUpgrade:7> * 3, [
+	[<ExtraUtilities:nodeUpgrade:0>, <ore:ingotRedstoneAlloy>, <ore:ingotRedstoneAlloy>],
+	[<ExtraUtilities:nodeUpgrade:0>, <ore:ingotGold>, <ExtraUtilities:nodeUpgrade:0>],
+	[<ore:ingotGold>, <ore:ingotRedstoneAlloy>, <ore:ingotRedstoneAlloy>]
+	]);
+// Node Upgrade: Breadth-First Search
+recipes.addShaped(<ExtraUtilities:nodeUpgrade:8> * 3, [
+	[<ore:ingotRedstoneAlloy>, <ore:ingotRedstoneAlloy>, <ore:ingotRedstoneAlloy>],
+	[<ExtraUtilities:nodeUpgrade:0>, <ExtraUtilities:nodeUpgrade:7>, <ExtraUtilities:nodeUpgrade:8>],
+	[<ore:ingotRedstoneAlloy>, <ore:ingotRedstoneAlloy>, <ore:ingotRedstoneAlloy>]
+	]);
+// Node Upgrade: Pseudo Round Robin
+recipes.addShaped(<ExtraUtilities:nodeUpgrade:9> * 3, [
+	[<ore:ingotRedstoneAlloy>, <ore:nuggetAluminiumBrass>, <ore:ingotRedstoneAlloy>],
+	[<ore:ingotRedstoneAlloy>, <ore:ingotAluminiumBrass>, <ore:nuggetAluminiumBrass>],
+	[<ore:ingotRedstoneAlloy>, <ore:nuggetAluminiumBrass>, <ore:ingotRedstoneAlloy>]
+	]);
+recipes.addShaped(<ExtraUtilities:nodeUpgrade:9> * 3, [
+	[<ore:ingotRedstoneAlloy>, <ore:nuggetGold>, <ore:ingotRedstoneAlloy>],
+	[<ore:ingotRedstoneAlloy>, <ore:ingotGold>, <ore:nuggetGold>],
+	[<ore:ingotRedstoneAlloy>, <ore:nuggetGold>, <ore:ingotRedstoneAlloy>]
+	]);
+// Node Upgrade: Stack
+recipes.addShaped(<ExtraUtilities:nodeUpgrade:3>, [
+	[<ore:ingotAluminiumBrass>, <ore:gemDiamond>, <ore:ingotAluminiumBrass>],
+	[<ore:gemDiamond>, <ExtraUtilities:nodeUpgrade:0>, <ore:gemDiamond>],
+	[<ore:ingotAluminiumBrass>, <minecraft:chest>, <ore:ingotAluminiumBrass>]
+	]);
+recipes.addShaped(<ExtraUtilities:nodeUpgrade:3>, [
+	[<ore:ingotGold>, <ore:gemDiamond>, <ore:ingotGold>],
+	[<ore:gemDiamond>, <ExtraUtilities:nodeUpgrade:0>, <ore:gemDiamond>],
+	[<ore:ingotGold>, <minecraft:chest>, <ore:ingotGold>]
+	]);
+// Node Upgrade: World Interaction
+recipes.addShaped(<ExtraUtilities:nodeUpgrade:2>, [
+	[<ore:gemLapis>, <BuildCraft|Silicon:redstoneChipset:4>, <ore:gemLapis>],
+	[<ore:gemLapis>, <minecraft:iron_pickaxe>, <ore:gemLapis>],
+	[<ore:gemLapis>, <ore:ingotRedstoneAlloy>, <ore:gemLapis>],
+	]);
+recipes.addShaped(<ExtraUtilities:nodeUpgrade:2>, [
+	[<ore:gemLapis>, <BuildCraft|Silicon:redstoneChipset:4>, <ore:gemLapis>],
+	[<ore:gemLapis>, <TConstruct:pickaxeHead:2>, <ore:gemLapis>],
+	[<ore:gemLapis>, <ore:ingotRedstoneAlloy>, <ore:gemLapis>],
+	]);
+recipes.addShaped(<ExtraUtilities:nodeUpgrade:2>, [
+	[<ore:gemLapis>, <ore:ingotPulsatingIron>, <ore:gemLapis>],
+	[<ore:ingotPulsatingIron>, <minecraft:iron_pickaxe>, <ore:ingotPulsatingIron>],
+	[<ore:gemLapis>, <ore:ingotRedstoneAlloy>, <ore:gemLapis>]
+	]);
+recipes.addShaped(<ExtraUtilities:nodeUpgrade:2>, [
+	[<ore:gemLapis>, <ore:ingotPulsatingIron>, <ore:gemLapis>],
+	[<ore:ingotPulsatingIron>, <TConstruct:pickaxeHead:2>, <ore:ingotPulsatingIron>],
+	[<ore:gemLapis>, <ore:ingotRedstoneAlloy>, <ore:gemLapis>]
+	]);
+// Node Upgrade: Ender Transmitter
+QED.addShapedRecipe(<ExtraUtilities:nodeUpgrade:5>, [
+	[<minecraft:redstone_torch>, <ore:nuggetPulsatingIron>, <minecraft:redstone_torch>],
+	[<ore:gemQuartz>, <EnderIO:itemFrankenSkull:3>, <ore:gemQuartz>],
+	[<ore:nuggetPulsatingIron>, <ore:nuggetPulsatingIron>, <ore:nuggetPulsatingIron>]
+	]);
+// Node Upgrade: Ender Reciever
+QED.addShapedRecipe(<ExtraUtilities:nodeUpgrade:6>, [
+	[<ore:dustRedstone>, <ore:nuggetPulsatingIron>, <ore:gemQuartz>],
+	[<ore:dustRedstone>, <EnderIO:itemFrankenSkull:3>, <ore:gemQuartz>],
+	[<ore:nuggetPulsatingIron>, <ore:nuggetPulsatingIron>, <ore:nuggetPulsatingIron>]
+	]);
 
 /* // Forestry // */
+// Basic Circuit Board
+AssemblyTable.addRecipe(<Forestry:chipsets:0>, 10000, [<ore:ingotTin>, <ore:circuitBasic>, <ore:chipsetRed>]);
+// Enhanced Circuit Board
+AssemblyTable.addRecipe(<Forestry:chipsets:1>, 15000, [<ore:ingotBronze>, <ore:circuitBasic>, <ore:chipsetRed>]);
+// Refined Circuit Board
+AssemblyTable.addRecipe(<Forestry:chipsets:2>, 20000, [<ore:ingotInvar>, <ore:circuitAdvanced>, <ore:chipsetRed>]);
+// Intricate Circuit Board
+AssemblyTable.addRecipe(<Forestry:chipsets:3>, 25000, [<ore:ingotElectrum>, <ore:circuitAdvanced>, <ore:chipsetRed>]);
 // Bucket filling from Juice bottle
 recipes.addShapeless(<Forestry:bucketJuice>,
 	[<ore:listAlljuice>, <minecraft:bucket>]);
@@ -571,20 +925,34 @@ Carpenter.addRecipe(<Forestry:frameProven>, [
 	[<Forestry:oakStick>, <Forestry:oakStick>, <Forestry:oakStick>],
 	[<Forestry:oakStick>, <TConstruct:materials:25>, <Forestry:oakStick>],
 	[<Forestry:oakStick>, <Forestry:oakStick>, <Forestry:oakStick>]
-	], <liquid:for.honey> * 500, 40);
+	], <liquid:for.honey> * 100, 40);
 // Proven Grafter
 Carpenter.addRecipe(<Forestry:grafterProven>, [
 	[null, <ore:nuggetInvar>, <ore:ingotInvar>],
 	[null, <Forestry:oakStick>, <ore:nuggetInvar>],
 	[<Forestry:oakStick>, null, null]
-	], <liquid:for.honey> * 500, 40);
+	], <liquid:for.honey> * 100, 40);
+// Impregnated Casing
+Carpenter.addRecipe(<Forestry:impregnatedCasing>, [
+	[null, <minecraft:chest>, null],
+	[<minecraft:chest>, null, <minecraft:chest>],
+	[null, <minecraft:chest>, null]
+	], <liquid:seedoil> * 250, 20);
+Carpenter.addRecipe(<Forestry:impregnatedCasing>, [
+	[<ore:logWood>, <ore:logWood>, <ore:logWood>],
+	[<ore:logWood>, null, <ore:logWood>],
+	[<ore:logWood>, <ore:logWood>, <ore:logWood>]
+	], <liquid:plantoil> * 250, 20);
+Carpenter.addRecipe(<Forestry:impregnatedCasing>, [
+	[null, <minecraft:chest>, null],
+	[<minecraft:chest>, null, <minecraft:chest>],
+	[null, <minecraft:chest>, null]
+	], <liquid:plantoil> * 250, 20);
+// Fertilizer(Forestry)
+recipes.addShapeless(<Forestry:fertilizerCompound> * 4, [<ore:dustSaltpeter>, <ore:dustSaltpeter>, <Forestry:phosphor>]);
+recipes.addShapeless(<Forestry:fertilizerCompound>, [<ThermalExpansion:material:516>]);
 //Ethanol Refining
-//!- mods.buildcraft.Refinery.addRecipe(<liquid:bioethanol> * 3, 20, 10, <liquid:biomass> * 10); //-! deprecated
 mods.immersiveengineering.Refinery.addRecipe(<liquid:bioethanol> * 3, <liquid:biomass> * 5, <liquid:biomass> * 5);
-//!- mods.buildcraft.Refinery.addRecipe(<liquid:bioethanol>, 40, 1, <liquid:mead> * 100); //-! deprecated
-mods.immersiveengineering.Refinery.addRecipe(<liquid:bioethanol>, <liquid:mead> * 50, <liquid:mead> * 50);
-Still.addRecipe(<liquid:bioethanol>, <liquid:mead> * 100, 20);
-//Still.addRecipe(<liquid:bioethanol> * 2, <liquid:hootch> * 3, 20);
 // Capenter
 recipes.addShaped(<Forestry:factory:1>, [
 	[<ore:ingotBronze>, <ore:circuitBasic>, <ore:ingotBronze>],
@@ -649,19 +1017,21 @@ ThermionicFabricator.addCast(<Forestry:factory:7>, [
 /* // Gendustry // */
 // Bee Receptacle
 Inscriber.addRecipe([<Forestry:honeyDrop>, <Forestry:honeydew>],
-	<Forestry:chipsets:1>, <minecraft:redstone>, <gendustry:BeeReceptacle>, "Inscribe");
+	<Forestry:chipsets:1>, <minecraft:redstone>, <gendustry:BeeReceptacle>, "Press");
 // Power Module
 Inscriber.addRecipe([<EnderIO:itemMaterial>, <appliedenergistics2:item.ItemMultiMaterial:5>],
-	<Forestry:chipsets:1>, <EnderIO:itemBasicCapacitor>, <gendustry:PowerModule>, "Inscribe");
+	<Forestry:chipsets:1>, <EnderIO:itemBasicCapacitor>, <gendustry:PowerModule>, "Press");
 // Climate Module
 Inscriber.addRecipe([<EnderIO:itemMaterial>, <appliedenergistics2:item.ItemMultiMaterial:5>],
-	<Forestry:chipsets:1>, <minecraft:redstone>, <gendustry:ClimateModule>, "Inscribe");
+	<Forestry:chipsets:1>, <minecraft:redstone>, <gendustry:ClimateModule>, "Press");
 // Genetics Processor
 AssemblyTable.addRecipe(<gendustry:GeneticsProcessor>, 8000,
-	[<ore:circuitBasic>, <ore:itemSilicon>, <ore:gemDiamond>, <ore:gemQuartz>]);
+	[<ore:circuitBasic>, <ore:itemSilicon>, <ore:gemDiamond>, <ore:crystalNetherQuartz>]);
 // Enviromental Processor
 AssemblyTable.addRecipe(<gendustry:EnvProcessor>, 8000,
-	[<ore:circuitBasic>, <ore:itemSilicon>, <ore:gemDiamond>, <ore:gemQuartz>]);
+	[<ore:circuitBasic>, <ore:itemSilicon>, <ore:gemDiamond>, <ore:crystalCertusQuartz>]);
+AssemblyTable.addRecipe(<gendustry:EnvProcessor>, 8000,
+	[<ore:circuitBasic>, <ore:itemSilicon>, <ore:gemDiamond>, <appliedenergistics2:item.ItemMultiMaterial:1>]);
 // Mutagen Producer
 recipes.addShaped(<gendustry:MutagenProducer>, [
 	[<ore:ingotBronze>, <gendustry:PowerModule>, <ore:ingotBronze>],
@@ -783,6 +1153,9 @@ AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:0>, 64000,
 // Sieve
 AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:15>, 64000,
 	[<gendustry:UpgradeFrame>, <Forestry:craftingMaterial:3>]);
+// Light
+AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:11>, 64000,
+	[<gendustry:UpgradeFrame>, <ExtraUtilities:chandelier>]);
 
 /* // Grimoire of Gaia // */
 // Meat pie
@@ -815,6 +1188,10 @@ recipes.addShapeless(<harvestcraft:freshwaterItem> * 4,
 // Fresh water from water bucket
 recipes.addShapeless(<harvestcraft:freshwaterItem> * 4,
 	[<ore:fz.waterBucketLike>]);
+// Rice Seed
+recipes.addShapeless(<harvestcraft:riceseedItem>, [<harvestcraft:riceItem>]);
+// Seaweed Sead
+recipes.addShapeless(<harvestcraft:seaweedseedItem>, [<harvestcraft:seaweedItem>]);
 
 /* // Immersive Engineering // */
 // Ethanol from Hootch on Still
@@ -824,10 +1201,10 @@ mods.immersiveengineering.Refinery.addRecipe(<liquid:biodiesel> * 16, <liquid:pl
 mods.immersiveengineering.Refinery.addRecipe(<liquid:biodiesel> * 16, <liquid:seedoil> * 8, <liquid:ethanol> * 8);
 mods.immersiveengineering.Refinery.addRecipe(<liquid:biodiesel> * 16, <liquid:seedoil> * 8, <liquid:biomass> * 8);
 // Plate Casting
-Casting.addTableRecipe(<ImmersiveEngineering:metal:30>, <liquid:iron.molten> * 144, null, false, 20);
-Casting.addTableRecipe(<ImmersiveEngineering:metal:32>, <liquid:aluminum.molten> * 144, null, false, 20);
-Casting.addTableRecipe(<ImmersiveEngineering:metal:33>, <liquid:lead.molten> * 144, null, false, 20);
-Casting.addTableRecipe(<ImmersiveEngineering:metal:38>, <liquid:steel.molten> * 144, null, false, 20);
+Casting.addTableRecipe(<ImmersiveEngineering:metal:30>, <liquid:iron.molten> * 144, null, false, 100);
+Casting.addTableRecipe(<ImmersiveEngineering:metal:32>, <liquid:aluminum.molten> * 144, null, false, 100);
+Casting.addTableRecipe(<ImmersiveEngineering:metal:33>, <liquid:lead.molten> * 144, null, false, 100);
+Casting.addTableRecipe(<ImmersiveEngineering:metal:38>, <liquid:steel.molten> * 144, null, false, 100);
 // Aluminium Rod Casting
 Casting.addTableRecipe(<ImmersiveEngineering:material:16>, <liquid:aluminum.molten> * 72, <TConstruct:metalPattern:1>, false, 20);
 // Steel Block declaration
@@ -837,6 +1214,7 @@ recipes.addShaped(<ImmersiveEngineering:storage:7>, [
 	[<ore:ingotSteel>, <ore:ingotSteel>, <ore:ingotSteel>]
 	]);
 // Coil by Rolling Machine
+/*
 Rolling.addShaped(<ImmersiveEngineering:coil:0> * 16, [
 	[<ore:ingotCopper>, <ore:ingotCopper>, <ore:ingotCopper>],
 	[<ore:ingotCopper>, <ore:stickWood>, <ore:ingotCopper>],
@@ -857,6 +1235,7 @@ Rolling.addShaped(<ImmersiveEngineering:coil:4> * 16, [
 	[<ore:ingotSteel>, <ore:stickWood>, <ore:ingotSteel>],
 	[<ore:ingotSteel>, <ore:ingotSteel>, <ore:ingotSteel>]
 	]);
+*/
 // Treated Planks
 Carpenter.addRecipe(<ImmersiveEngineering:treatedWood>, [
 	[<ore:plankWood>]
@@ -916,6 +1295,11 @@ Carpenter.addRecipe(<ImmersiveEngineering:treatedWood> * 8, [
 	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>],
 	[<ore:plankWood>, <ore:plankWood>, null]
 	], <liquid:creosote> * 1000, 20);
+// Coke Dusts
+for item in <ore:fuelCoke>.items{
+mods.thermalexpansion.Pulverizer.addRecipe(4800, item, <ImmersiveEngineering:metal:17>);
+mods.mekanism.Crusher.addRecipe(item, <ImmersiveEngineering:metal:17>);
+}
 
 /* // Mekanism // */
 // HDPE forming pression
@@ -935,10 +1319,30 @@ recipes.addShaped(<Mekanism:SaltBlock>, [
 	[<ore:dustSalt>, <ore:dustSalt>],
 	[<ore:dustSalt>, <ore:dustSalt>]
 	]);
+// Salt from Salt Block
+recipes.addShapeless(<Mekanism:Salt> * 4, [
+	<ore:blockSalt>
+	]);
 // Circuit Upgrade
 AssemblyTable.addRecipe(<Mekanism:ControlCircuit:1>, 1000, [<ore:circuitBasic>, <ore:alloyAdvanced>]);
 AssemblyTable.addRecipe(<Mekanism:ControlCircuit:2>, 2000, [<ore:circuitAdvanced>, <ore:alloyElite>]);
 AssemblyTable.addRecipe(<Mekanism:ControlCircuit:3>, 4000, [<ore:circuitElite>, <ore:alloyUltimate>]);
+// Bio Fuel from other crops/seeds
+for item in <ore:listAllfruit>.items {
+	mods.mekanism.Crusher.addRecipe(item, <Mekanism:BioFuel> * 4);
+}
+for item in <ore:listAllveggie>.items {
+	mods.mekanism.Crusher.addRecipe(item, <Mekanism:BioFuel> * 4);
+}
+for item in <ore:listAllnut>.items {
+	mods.mekanism.Crusher.addRecipe(item, <Mekanism:BioFuel> * 4);
+}
+for item in <ore:listAllgrain>.items {
+	mods.mekanism.Crusher.addRecipe(item, <Mekanism:BioFuel> * 2);
+}
+for item in <ore:listAllseed>.items {
+	mods.mekanism.Crusher.addRecipe(item, <Mekanism:BioFuel> * 2);
+}
 // Dynamic Tank
 recipes.addShaped(<Mekanism:BasicBlock:9> * 16, [
 	[null, <ImmersiveEngineering:metalDecoration2:2>, null],
@@ -954,7 +1358,7 @@ recipes.addShaped(<Mekanism:BasicBlock:10> * 16, [
 // Thermal Evapolation Block
 recipes.addShaped(<Mekanism:BasicBlock2:0> * 4, [
 	[<ore:plateCopper>, <Mekanism:BasicBlock:9>, <ore:plateCopper>],
-	[<Mekanism:BasicBlock:9>, <ore:plateCopper>, <Mekanism:BasicBlock:9>],
+	[<Mekanism:BasicBlock:9>, null, <Mekanism:BasicBlock:9>],
 	[<ore:plateCopper>, <Mekanism:BasicBlock:9>, <ore:plateCopper>]
 	]);
 // Thermal Evapolation Valve
@@ -962,6 +1366,11 @@ recipes.addShaped(<Mekanism:BasicBlock:15>, [
 	[null, <ore:circuitBasic>, null],
 	[<ore:plateCopper>, <Mekanism:BasicBlock:11>, <ore:plateCopper>],
 	[null, <ore:circuitBasic>, null]
+	]);
+recipes.addShaped(<Mekanism:BasicBlock:15> * 2, [
+	[<ore:circuitBasic>, <Mekanism:BasicBlock:9>, <ore:circuitBasic>],
+	[<Mekanism:BasicBlock:9>, <ore:circuitBasic>, <Mekanism:BasicBlock:9>],
+	[<ore:plateCopper>, <Mekanism:BasicBlock:9>, <ore:plateCopper>]
 	]);
 // Thermal Evapolation Controller
 recipes.addShaped(<Mekanism:BasicBlock:14>, [
@@ -981,6 +1390,14 @@ recipes.addShaped(<MekanismGenerators:Generator:9>, [
 	[<ore:ingotElectrum>, <Mekanism:EnergyTablet:*>, <ore:ingotElectrum>],
 	[<ore:ingotSteel>, <ImmersiveEngineering:storage:9>, <ore:ingotSteel>]
 	]);
+// Rotational Complex
+recipes.remove(<MekanismGenerators:Generator:8>);
+recipes.addShaped(<MekanismGenerators:Generator:8>, [
+	[<ore:ingotSteel>, <ore:alloyAdvanced>, <ore:ingotSteel>],
+	[<ore:ingotSteel>, <ore:alloyAdvanced>, <ore:ingotSteel>],
+	[<ore:ingotSteel>, <ImmersiveEngineering:metalDevice:9>, <ore:ingotSteel>]
+	]);
+
 
 /* // Minefactory Reloaded //*/
 // Conveyor Belt from Conveyor block
@@ -1116,6 +1533,7 @@ recipes.addShaped(<MineFactoryReloaded:machine.1:2>, [
 	[<MineFactoryReloaded:machineblock:0>]
 	]);
 // Deep Storage Unit
+/*
 recipes.addShaped(<MineFactoryReloaded:machine.1:3>, [
 	[<ThermalExpansion:Cache:4>, <EnderIO:itemFrankenSkull:3>, <ThermalExpansion:Cache:4>],
 	[<StorageDrawers:upgrade:6>, <Mekanism:TeleportationCore:0>, <StorageDrawers:upgrade:6>],
@@ -1130,6 +1548,11 @@ recipes.addShaped(<MineFactoryReloaded:machine.1:3>, [
 	[<appliedenergistics2:item.ItemMultiMaterial:43>, <ore:itemIlluminatedPanel>, <appliedenergistics2:item.ItemMultiMaterial:44>],
 	[<appliedenergistics2:item.ItemMultiMaterial:38>, <appliedenergistics2:item.ItemMultiMaterial:38>, <appliedenergistics2:item.ItemMultiMaterial:38>],
 	[<appliedenergistics2:tile.BlockQuartzGlass:0>, <MineFactoryReloaded:machineblock:0>, <appliedenergistics2:tile.BlockQuartzGlass:0>]
+	]);*/
+recipes.addShaped(<MineFactoryReloaded:machine.1:3>, [
+	[<ThermalExpansion:Cache:4>, <minecraft:ender_eye>, <ThermalExpansion:Cache:4>],
+	[<minecraft:ender_pearl>, <minecraft:ender_chest>, <minecraft:ender_pearl>],
+	[<ThermalExpansion:Cache:4>, <MineFactoryReloaded:machineblock:0>, <ThermalExpansion:Cache:4>]
 	]);
 // LiquiCrafter
 recipes.addShaped(<MineFactoryReloaded:machine.1:4>, [
@@ -1282,6 +1705,20 @@ recipes.addShaped(<MineFactoryReloaded:machine.2:12>, [
 //BioFuel from Bio Fuel
 mods.forestry.Squeezer.addRecipe(<liquid:biofuel> * 25, <Forestry:mulch:0> % 0, [<Mekanism:BioFuel:0>], 1);
 
+/* // Open Blocks // */
+// Vacuum Hopper
+recipes.addShaped(<OpenBlocks:vacuumhopper>, [
+	[<ore:ingotElectricalSteel>, <ore:itemConduitBinder>, <ore:ingotElectricalSteel>],
+	[<ore:blockHopper>, <ore:itemPulsatingCrystal>, <enderioaddons:itemMachineParts:1>],
+	[<ore:ingotElectricalSteel>, <ore:itemConduitBinder>, <ore:ingotElectricalSteel>]
+	]);
+// Auto Anvil
+recipes.addShaped(<OpenBlocks:autoanvil:0>, [
+	[<ore:ingotSteel>, <ImmersiveEngineering:tool:0>, <ore:ingotSteel>],
+	[<ore:ingotSteel>, <minecraft:anvil>, <ore:ingotSteel>],
+	[<ore:ingotSteel>, <ThermalExpansion:material:1>, <ore:ingotSteel>]
+	]);
+
 /* // Rail Craft// */
 // Tank Recipe
 recipes.addShaped(<Railcraft:machine.beta:0> * 8, [
@@ -1340,6 +1777,12 @@ recipes.addShapeless(<Railcraft:machine.beta:3>,
 // High Pressure Boiler Tank
 recipes.addShapeless(<Railcraft:machine.beta:4>, 
 	[<ImmersiveEngineering:metalDecoration2:2>, <ImmersiveEngineering:metalDecoration2:2>]);
+// Feed Station
+recipes.addShaped(<Railcraft:machine.alpha:11>, [
+	[<ore:plankWood>, <minecraft:golden_carrot>, <ore:plankWood>],
+	[<minecraft:golden_carrot>, <ore:plateSteel>, <minecraft:golden_carrot>],
+	[<ore:plankWood>, <minecraft:golden_carrot>, <ore:plankWood>]
+	]);
 // Tin plate
 Infuser.addRecipe("TIN", 25, <ImmersiveEngineering:metal:30>, <Railcraft:part.plate:2>);
 Infuser.addRecipe("TIN", 25, <Railcraft:part.plate:0>, <Railcraft:part.plate:2>);
@@ -1348,6 +1791,17 @@ Casting.addTableRecipe(<Railcraft:part.plate:2>, <liquid:tin.molten> * 72, <Rail
 Rolling.addShapeless(<Railcraft:part.plate:2>, [<ore:plateIron>, <ore:dustTin>]);
 
 /* // Tinker's Construction // */
+// Manyulin
+for ard in <ore:ingotArdite>.items{
+	for cob in <ore:ingotCobalt>.items{
+		mods.thermalexpansion.Smelter.addRecipe(3000, ard, cob, <TConstruct:materials:5>);
+	}
+}
+for ard in <ore:dustArdite>.items{
+	for cob in <ore:dustCobalt>.items{
+		mods.thermalexpansion.Smelter.addRecipe(3000, ard, cob, <TConstruct:materials:5>);
+	}
+}
 // Seared Block Conversion
 recipes.addShapeless(<TConstruct:Smeltery:6>,
 	[<TConstruct:Smeltery:4>]);
@@ -1388,6 +1842,17 @@ recipes.addShaped(<TConstruct:Smeltery:2> * 4, [
 	[<TConstruct:Smeltery:4>, <TConstruct:Smeltery:4>],
 	[<TConstruct:Smeltery:4>, <TConstruct:Smeltery:4>]
 	]);
+// Aluminium Brass
+for aluminium in <ore:dustAluminium>.items {
+	for copper in <ore:dustCopper>.items {
+		mods.thermalexpansion.Smelter.addRecipe(1600, aluminium * 3, copper, <TConstruct:materials:14> * 4);
+	}
+}
+for aluminium in <ore:ingotAluminium>.items {
+	for copper in <ore:ingotCopper>.items {
+		mods.thermalexpansion.Smelter.addRecipe(1600, aluminium * 3, copper, <TConstruct:materials:14> * 4);
+	}
+}
 
 /* // Thermal Dynamics // */
 // Redstone Relay
@@ -1422,3 +1887,14 @@ recipes.addShaped(<ThermalDynamics:retriever> * 2, [
 	]);
 
 /* // Thermal Expansion //*/
+// Phyto-Gro
+recipes.addShapeless(<ThermalExpansion:material:516> * 8, [<ore:dustWood>, <ore:dustWood>, <ore:dustSaltpeter>, <ore:itemSlag>]);
+recipes.addShapeless(<ThermalExpansion:material:516> * 32, [<ore:dustCharcoal>, <ore:dustSaltpeter>, <ore:itemSlag>]);
+// Florb
+recipes.addShapeless(<ThermalExpansion:florb:0> * 4, [<ore:dustWood>, <ore:itemSlag>, <ore:slimeball>]);
+// Magmatic Florb
+recipes.addShapeless(<ThermalExpansion:florb:1> * 4, [<ore:dustWood>, <ore:itemSlag>, <ore:slimeball>, <ore:dustBlaze>]);
+recipes.addShapeless(<ThermalExpansion:florb:1> * 4, [<ore:dustWood>, <ore:itemSlag>, <minecraft:magma_cream>]);
+// RockWool
+furnace.addRecipe(<ThermalExpansion:Rockwool:8>, <ore:itemSlag>);
+mods.thermalexpansion.Furnace.addRecipe(1600, <ImmersiveEngineering:material:13>, <ThermalExpansion:Rockwool:8>);

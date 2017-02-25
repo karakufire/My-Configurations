@@ -75,7 +75,21 @@ val diamonds = [
 	<minecraft:diamond_shovel:0>,
 	<minecraft:diamond_hoe:0>
 	] as IItemStack[];
-val diamond_amount = [5, 8, 7, 4, 2, 3, 3, 1, 2] as int[];
+val lapises = [
+	<MekanismTools:LapisLazuliHelmet:0>,
+	<MekanismTools:LapisLazuliChestplate:0>,
+	<MekanismTools:LapisLazuliLeggings:0>,
+	<MekanismTools:LapisLazuliBoots:0>,
+	<MekanismTools:LapisLazuliSword:0>,
+	<MekanismTools:LapisLazuliPickaxe:0>,
+	<MekanismTools:LapisLazuliAxe:0>,
+	<MekanismTools:LapisLazuliShovel:0>,
+	<MekanismTools:LapisLazuliHoe:0>
+	] as IItemStack[];
+val amount = [5, 8, 7, 4, 2, 3, 3, 1, 2] as int[];
 for i, eq in diamonds {
-	Crusher.addRecipe(eq, <Mekanism:OtherDust:0> * (diamond_amount[i] - 2));
+	Crusher.addRecipe(eq, <Mekanism:OtherDust:0> * (amount[i] - 2));
+}
+for i, eq in lapises {
+	Crusher.addRecipe(eq, <minecraft:dye:4> * amount[i]);
 }

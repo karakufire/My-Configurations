@@ -31,6 +31,7 @@ vanilla.loot.addChestLoot("naturalistChest", <harvestcraft:pamorangeSapling>.wei
 vanilla.loot.addChestLoot("naturalistChest", <harvestcraft:pamoliveSapling>.weight(8), 1, 4);
 vanilla.loot.addChestLoot("naturalistChest", <harvestcraft:pammangoSapling>.weight(8), 1, 4);
 vanilla.loot.addChestLoot("naturalistChest", <harvestcraft:pamlimeSapling>.weight(8), 1, 4);
+vanilla.loot.addChestLoot("naturalistChest", <harvestcraft:pammapleSapling>.weight(8), 1, 4);
 vanilla.loot.addChestLoot("naturalistChest", <harvestcraft:pamlemonSapling>.weight(8), 1, 4);
 vanilla.loot.addChestLoot("naturalistChest", <harvestcraft:pamgrapefruitSapling>.weight(8), 1, 4);
 vanilla.loot.addChestLoot("naturalistChest", <harvestcraft:pamfigSapling>.weight(8), 1, 4);

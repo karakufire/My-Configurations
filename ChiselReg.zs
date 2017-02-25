@@ -212,6 +212,24 @@ Groups.addVariation("decorative_pot", <GardenContainers:decorative_pot:0>);
 Groups.addVariation("decorative_pot", <GardenContainers:decorative_pot:1>);
 Groups.addVariation("decorative_pot", <GardenContainers:decorative_pot:2>);
 
+Groups.addGroup("lapis_caelestis");
+Groups.addVariation("lapis_caelestis", <ExtraUtilities:greenscreen:0>);
+Groups.addVariation("lapis_caelestis", <ExtraUtilities:greenscreen:1>);
+Groups.addVariation("lapis_caelestis", <ExtraUtilities:greenscreen:2>);
+Groups.addVariation("lapis_caelestis", <ExtraUtilities:greenscreen:3>);
+Groups.addVariation("lapis_caelestis", <ExtraUtilities:greenscreen:4>);
+Groups.addVariation("lapis_caelestis", <ExtraUtilities:greenscreen:5>);
+Groups.addVariation("lapis_caelestis", <ExtraUtilities:greenscreen:6>);
+Groups.addVariation("lapis_caelestis", <ExtraUtilities:greenscreen:7>);
+Groups.addVariation("lapis_caelestis", <ExtraUtilities:greenscreen:8>);
+Groups.addVariation("lapis_caelestis", <ExtraUtilities:greenscreen:9>);
+Groups.addVariation("lapis_caelestis", <ExtraUtilities:greenscreen:10>);
+Groups.addVariation("lapis_caelestis", <ExtraUtilities:greenscreen:11>);
+Groups.addVariation("lapis_caelestis", <ExtraUtilities:greenscreen:12>);
+Groups.addVariation("lapis_caelestis", <ExtraUtilities:greenscreen:13>);
+Groups.addVariation("lapis_caelestis", <ExtraUtilities:greenscreen:14>);
+Groups.addVariation("lapis_caelestis", <ExtraUtilities:greenscreen:15>);
+
 Groups.addVariation("stonebricksmooth", <GardenStuff:moss_brick:0>);
 Groups.addVariation("stonebricksmooth", <GardenStuff:moss_brick:1>);
 Groups.addVariation("stonebricksmooth", <GardenStuff:moss_brick:2>);
@@ -219,5 +237,9 @@ Groups.addVariation("stonebricksmooth", <GardenStuff:moss_brick:3>);
 Groups.addVariation("stonebricksmooth", <GardenStuff:moss_brick:4>);
 Groups.addVariation("stonebricksmooth", <GardenStuff:moss_brick:5>);
 Groups.addVariation("stonebricksmooth", <GardenStuff:moss_brick:6>);
+Groups.addVariation("stonebricksmooth", <ExtraUtilities:decorativeBlock1:0>);
+Groups.addVariation("stonebricksmooth", <ExtraUtilities:decorativeBlock1:4>);
+Groups.addVariation("stonebricksmooth", <ExtraUtilities:decorativeBlock1:7>);
+
 furnace.remove(<chisel:concrete:0>);
 //mods.thermalexpansion.Furnace.removeRecipe(<chisel:concrete:0>);

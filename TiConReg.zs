@@ -5,8 +5,6 @@ import mods.tconstruct.Casting;
 import mods.tconstruct.Smeltery;
 
 //Items
-val netherwart = <minecraft:nether_wart>;
-val netherwartDried = <GrimoireOfGaia:item.GrimoireOfGaia.FoodDriedNetherWart>;
 val meatIngot = <MineFactoryReloaded:meat.ingot.raw:0>;
 val meatNugget = <MineFactoryReloaded:meat.nugget.raw:0>;
 
@@ -91,11 +89,13 @@ val castNugget = <TConstruct:metalPattern:27>;
 val castGear = <TConstruct:gearCast>;
 
 /* Remove */
-Smeltery.removeMelting(<minecraft:redstone>);
-Smeltery.removeMelting(<minecraft:redstone_block>);
-//Casting.removeTableRecipe(<Forestry:gearBronze>);
-//Casting.removeTableRecipe(<Forestry:gearCopper>);
-//Casting.removeTableRecipe(<Forestry:gearTin>);
+Smeltery.removeMelting(<ore:dustPyrotheum>);
+Smeltery.removeMelting(<ore:dustCryotheum>);
+Smeltery.removeMelting(<ore:dustGlowstone>);
+Smeltery.removeMelting(<ore:glowstone>);
+Smeltery.removeMelting(<ore:dustCoal>);
+mods.tconstruct.Tweaks.removeRepairMaterial(<DraconicEvolution:wyvernCore>, "Draconium");
+mods.tconstruct.Tweaks.removeRepairMaterial(<DraconicEvolution:awakenedCore>, "Awakened Draconium");
 
 /* Add */
 Smeltery.addMelting(<minecraft:redstone>, <liquid:redstone> * 100, 1200, <minecraft:redstone_block>);
@@ -103,6 +103,15 @@ Smeltery.addMelting(<minecraft:redstone_block>, <liquid:redstone> * 900, 1200, <
 Smeltery.addMelting(<ImmersiveEngineering:material:14>, <liquid:iron.molten> * 72, 550, <minecraft:iron_bars>);
 Smeltery.addMelting(<ImmersiveEngineering:material:15>, <liquid:steel.molten> * 72, 650, <ImmersiveEngineering:metalDecoration:0>);
 Smeltery.addMelting(<ImmersiveEngineering:material:16>, <liquid:aluminum.molten> * 72, 300, <ImmersiveEngineering:metalDecoration:12>);
+Smeltery.addMelting(<ImmersiveEngineering:metal:30>, <liquid:iron.molten> * 144, 550, <minecraft:iron_block>);
+Smeltery.addMelting(<ImmersiveEngineering:metal:31>, <liquid:copper.molten> * 144, 550, <ImmersiveEngineering:storage:0>);
+Smeltery.addMelting(<ImmersiveEngineering:metal:32>, <liquid:aluminum.molten> * 144, 550, <ImmersiveEngineering:storage:1>);
+Smeltery.addMelting(<ImmersiveEngineering:metal:33>, <liquid:lead.molten> * 144, 550, <ImmersiveEngineering:storage:2>);
+Smeltery.addMelting(<ImmersiveEngineering:metal:34>, <liquid:silver.molten> * 144, 550, <ImmersiveEngineering:storage:3>);
+Smeltery.addMelting(<ImmersiveEngineering:metal:35>, <liquid:nickel.molten> * 144, 550, <ImmersiveEngineering:storage:4>);
+Smeltery.addMelting(<ImmersiveEngineering:metal:37>, <liquid:electrum.molten> * 144, 550, <ImmersiveEngineering:storage:6>);
+Smeltery.addMelting(<ore:dustObsidian>, <liquid:obsidian.molten> * 72, 500, <minecraft:obsidian>);
+
 for i, eq in osmiumeq{
 	Smeltery.addMelting(eq, <liquid:osmium.molten> * (144 * num[i]), 550, <Mekanism:BasicBlock:0>);
 }
@@ -144,7 +153,7 @@ for i, glass in glasses{
 	Casting.addBasinRecipe(<ExtraUtilities:decorativeBlock2:4>, <liquid:gold.molten> * 128, glass, true, 20);
 	Casting.addBasinRecipe(<ExtraUtilities:decorativeBlock2:7>, <liquid:glowstone> * 1000, glass, true, 20);
 }
-Drying.addRecipe(netherwart, netherwartDried, 6000);
+Drying.addRecipe(<minecraft:nether_wart>, <GrimoireOfGaia:item.GrimoireOfGaia.FoodDriedNetherWart>, 6000);
 Drying.addRecipe(<harvestcraft:muttonrawItem>, <TConstruct:jerky:3>, 6000);
 Drying.addRecipe(<etfuturum:mutton_raw>, <TConstruct:jerky:3>, 6000);
 Drying.addRecipe(<minecraft:fish:1>, <TConstruct:jerky:4>, 6000);
