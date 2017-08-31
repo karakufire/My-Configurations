@@ -46,6 +46,9 @@ val futureMuttonCkd = <etfuturum:mutton_cooked>;
 //remover
 listFishRaw.remove(<harvestcraft:firmtofuItem>);
 <ore:plateTin>.remove(<Railcraft:part.plate:2>);
+for item in <ore:oreAluminum>.items{
+	<ore:oreAluminum>.remove(item);
+}
 
 //block registering
 gravel.add(<etfuturum:old_gravel>);
@@ -186,3 +189,6 @@ gearStone.add(<EnderIO:itemMachinePart:1>);
 <ore:fertilizer>.add(<Forestry:fertilizerCompound>);
 <ore:fertilizer>.add(<Forestry:fertilizerBio>);
 <ore:fertilizer>.add(<GardenCore:compost_pile>);
+<ore:waxBees>.addAll(<ore:itemBeeswax>);
+<ore:waxBees>.add(<Forestry:refractoryWax>);
+<ore:dustNetherrack>.add(<factorization:nether_powder>);

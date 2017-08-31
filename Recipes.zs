@@ -81,6 +81,7 @@ recipes.remove(<Forestry:factory:5>);
 recipes.remove(<Forestry:factory:6>);
 recipes.remove(<Forestry:factory:7>);
 recipes.remove(<Forestry:factory2:0>);
+recipes.removeShapeless(<Forestry:fertilizerCompound>);
 recipes.remove(<GardenStuff:stone_block>);
 recipes.remove(<gendustry:BeeReceptacle>);
 recipes.remove(<gendustry:PowerModule>);
@@ -206,9 +207,12 @@ Casting.removeTableRecipe(<ThermalExpansion:Plate:1>);
 Casting.removeTableRecipe(<ThermalExpansion:Plate:2>);
 Casting.removeTableRecipe(<ThermalExpansion:Plate:3>);
 //recipes.remove(<ThermalExpansion:Frame:10>);
+mods.thermalexpansion.Pulverizer.removeRecipe(<minecraft:netherrack>);
 
 /***--- Add Recipes ---***/
 /* // Minecraft //*/
+recipes.addShapeless(<minecraft:glowstone_dust>,
+	[<Forestry:phosphor>, <factorization:nether_powder>, <factorization:nether_powder>, <Forestry:phosphor>]);
 // Stone slabs from double Stone slab
 recipes.addShapeless(<minecraft:stone_slab:0> * 2,
 	[<minecraft:double_stone_slab:0>]);
@@ -885,6 +889,11 @@ QED.addShapedRecipe(<ExtraUtilities:nodeUpgrade:6>, [
 	[<ore:nuggetPulsatingIron>, <ore:nuggetPulsatingIron>, <ore:nuggetPulsatingIron>]
 	]);
 
+/* // Factorization // */
+mods.thermalexpansion.Pulverizer.addRecipe(3200, <minecraft:netherrack>,
+	<factorization:nether_powder>, <ThermalFoundation:material:16>, 15);
+Crusher.addRecipe(<minecraft:netherrack>, <factorization:nether_powder>);
+
 /* // Forestry // */
 // Basic Circuit Board
 AssemblyTable.addRecipe(<Forestry:chipsets:0>, 10000, [<ore:ingotTin>, <ore:circuitBasic>, <ore:chipsetRed>]);
@@ -948,9 +957,25 @@ Carpenter.addRecipe(<Forestry:impregnatedCasing>, [
 	[<minecraft:chest>, null, <minecraft:chest>],
 	[null, <minecraft:chest>, null]
 	], <liquid:plantoil> * 250, 20);
+// Scented Paneling
+Carpenter.addRecipe(<Forestry:craftingMaterial:6>, [
+	[null, <ore:dropRoyalJelly>],
+	[<ore:plankWood>, <ore:plankWood>, <ore:plankWood>],
+	[<ore:waxBees>, <ore:itemPollen>, <ore:waxBees>]
+	], <liquid:for.honey> * 500, 20);
 // Fertilizer(Forestry)
 recipes.addShapeless(<Forestry:fertilizerCompound> * 4, [<ore:dustSaltpeter>, <ore:dustSaltpeter>, <Forestry:phosphor>]);
+recipes.addShapeless(<Forestry:fertilizerCompound> * 4, [
+	<Forestry:ash>, <Forestry:ash>, <Forestry:ash>,
+	<Forestry:ash>, <Forestry:phosphor>, <Forestry:ash>,
+	<Forestry:ash>, <Forestry:ash>, <Forestry:ash>]);
+recipes.addShapeless(<Forestry:fertilizerCompound>, [<minecraft:dye:15>, <ore:dustSaltpeter>]);
 recipes.addShapeless(<Forestry:fertilizerCompound>, [<ThermalExpansion:material:516>]);
+recipes.addShaped(<Forestry:fertilizerCompound> * 24, [
+	[<ore:dustSaltpeter>, <ore:dustSaltpeter>, <ore:dustSaltpeter>],
+	[<ore:dustSaltpeter>, <ore:gemApatite>, <ore:dustSaltpeter>],
+	[<ore:dustSaltpeter>, <ore:dustSaltpeter>, <ore:dustSaltpeter>]
+	]);
 //Ethanol Refining
 mods.immersiveengineering.Refinery.addRecipe(<liquid:bioethanol> * 3, <liquid:biomass> * 5, <liquid:biomass> * 5);
 // Capenter
@@ -1116,7 +1141,7 @@ AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:5>, 64000,
 	[<gendustry:UpgradeFrame>, <factorization:acid>]);
 // Humidifier
 AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:4>, 64000,
-	[<gendustry:UpgradeFrame>, <Railcraft:fluid.steam.bottle>]);
+	[<gendustry:UpgradeFrame>, <minecraft:potion:0>]);
 // Heater
 AssemblyTable.addRecipe(<gendustry:ApiaryUpgrade:6>, 64000,
 	[<gendustry:UpgradeFrame>, <ore:dustBlaze>]);
@@ -1212,6 +1237,22 @@ recipes.addShaped(<ImmersiveEngineering:storage:7>, [
 	[<ore:ingotSteel>, <ore:ingotSteel>, <ore:ingotSteel>],
 	[<ore:ingotSteel>, <ore:ingotSteel>, <ore:ingotSteel>],
 	[<ore:ingotSteel>, <ore:ingotSteel>, <ore:ingotSteel>]
+	]);
+// Radiator Block
+recipes.addShaped(<ImmersiveEngineering:metalDecoration:4> * 2, [
+	[<ore:ingotSteel>, <ore:ingotCopper>, <ore:ingotSteel>],
+	[<ore:ingotCopper>, <Forestry:canWater>, <ore:ingotCopper>],
+	[<ore:ingotSteel>, <ore:ingotCopper>, <ore:ingotSteel>]
+	]);
+recipes.addShaped(<ImmersiveEngineering:metalDecoration:4> * 2, [
+	[<ore:ingotSteel>, <ore:ingotCopper>, <ore:ingotSteel>],
+	[<ore:ingotCopper>, <Forestry:waxCapsuleWater>, <ore:ingotCopper>],
+	[<ore:ingotSteel>, <ore:ingotCopper>, <ore:ingotSteel>]
+	]);
+recipes.addShaped(<ImmersiveEngineering:metalDecoration:4> * 2, [
+	[<ore:ingotSteel>, <ore:ingotCopper>, <ore:ingotSteel>],
+	[<ore:ingotCopper>, <Forestry:refractoryWater>, <ore:ingotCopper>],
+	[<ore:ingotSteel>, <ore:ingotCopper>, <ore:ingotSteel>]
 	]);
 // Coil by Rolling Machine
 /*
@@ -1887,6 +1928,8 @@ recipes.addShaped(<ThermalDynamics:retriever> * 2, [
 	]);
 
 /* // Thermal Expansion //*/
+// Tesseract Initialize
+recipes.addShapeless(<ThermalExpansion:Tesseract>, [<ThermalExpansion:Tesseract>]);
 // Phyto-Gro
 recipes.addShapeless(<ThermalExpansion:material:516> * 8, [<ore:dustWood>, <ore:dustWood>, <ore:dustSaltpeter>, <ore:itemSlag>]);
 recipes.addShapeless(<ThermalExpansion:material:516> * 32, [<ore:dustCharcoal>, <ore:dustSaltpeter>, <ore:itemSlag>]);
